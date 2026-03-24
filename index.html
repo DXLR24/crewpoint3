@@ -1,0 +1,2091 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrewPoint — Морские документы за 14 дней | Карьера в море под ключ</title>
+    <meta name="description" content="CrewPoint — кадровая платформа для морских специалистов. Документы за 14 дней. Три карьерных пути: вахтенный матрос, краболовный флот, международные суда.">
+    <meta name="theme-color" content="#080C14">
+    <meta name="color-scheme" content="dark">
+    <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    <style>
+/* ═══════════════════════════════════
+   RESET & CUSTOM PROPERTIES
+   ═══════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+    --bg-deepest:#050810;--bg-dark:#080C14;--bg-navy:#0D1117;--bg-panel:#111820;
+    --bg-card:#141C27;--bg-card-hover:#182231;--bg-elevated:#1A2332;
+    --border-subtle:rgba(255,255,255,0.06);--border-light:rgba(255,255,255,0.1);
+    --border-gold:rgba(201,168,76,0.3);
+    --gold:#C9A84C;--gold-light:#E8D5A3;--gold-muted:rgba(201,168,76,0.15);
+    --green:#3ECF8E;--green-muted:rgba(62,207,142,0.12);
+    --red:#E5534B;--red-muted:rgba(229,83,75,0.1);
+    --purple:#A78BFA;--purple-muted:rgba(167,139,250,0.12);
+    --blue:#58A6FF;--blue-muted:rgba(88,166,255,0.1);
+    --orange:#F59E0B;--orange-muted:rgba(245,158,11,0.12);
+    --cyan:#22D3EE;--cyan-muted:rgba(34,211,238,0.1);
+    --text-primary:rgba(255,255,255,0.92);--text-secondary:rgba(255,255,255,0.55);
+    --text-muted:rgba(255,255,255,0.35);--text-faint:rgba(255,255,255,0.2);
+    --white:#fff;
+    --font-sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    --font-serif:'Playfair Display',Georgia,serif;
+    --font-mono:'JetBrains Mono',monospace;
+    --radius:8px;--radius-md:12px;--radius-lg:20px;--radius-xl:28px;
+    --ease:cubic-bezier(0.4,0,0.2,1);--ease-out:cubic-bezier(0,0,0.2,1);
+    --shadow-card:0 1px 2px rgba(0,0,0,0.3),0 4px 16px rgba(0,0,0,0.2);
+    --shadow-elevated:0 2px 4px rgba(0,0,0,0.3),0 8px 32px rgba(0,0,0,0.3),0 24px 60px rgba(0,0,0,0.15);
+    --shadow-glow-gold:0 0 40px rgba(201,168,76,0.08),0 0 80px rgba(201,168,76,0.04);
+}
+
+/* ═══════════════════════════════════
+   BASE & TYPOGRAPHY
+   ═══════════════════════════════════ */
+html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-sans);color:var(--text-secondary);background:var(--bg-dark);line-height:1.65;overflow-x:hidden}
+.container{max-width:1240px;margin:0 auto;padding:0 32px}
+.section{padding:140px 0}
+.label{display:inline-flex;align-items:center;gap:8px;font-size:.7rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.label::before{content:'';width:24px;height:1px;background:var(--gold)}
+.title{font-family:var(--font-serif);font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:800;color:var(--text-primary);line-height:1.15;margin-bottom:20px;letter-spacing:-.5px}
+.title .accent{color:var(--gold)}
+.subtitle{font-size:1.05rem;color:var(--text-secondary);max-width:560px;line-height:1.75;margin-left:auto;margin-right:auto}
+
+/* ═══════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════ */
+.text-center{text-align:center}
+.bg-dark{background:var(--bg-dark)}.bg-navy{background:var(--bg-navy)}
+.bg-deepest{background:var(--bg-deepest)}.bg-panel{background:var(--bg-panel)}
+.section--sm{padding:80px 0}
+.title--sm{font-size:clamp(1.6rem,3vw,2.2rem)}
+.text-green{color:var(--green)}.text-blue{color:var(--blue)}.text-gold{color:var(--gold)}
+.text-orange{color:var(--orange)}.text-cyan{color:var(--cyan)}.text-red{color:var(--red)}
+.faded{opacity:.4}
+
+/* ═══════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 36px;border-radius:var(--radius);font-family:var(--font-sans);font-size:.9rem;font-weight:600;border:none;cursor:pointer;transition:all .45s var(--ease);text-decoration:none;white-space:nowrap;letter-spacing:.3px;position:relative;overflow:hidden}
+.btn::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.08),transparent);opacity:0;transition:opacity .45s var(--ease)}
+.btn:hover::after{opacity:1}
+.btn--gold{background:linear-gradient(135deg,#C9A84C,#B8953A);color:var(--bg-dark);box-shadow:0 2px 8px rgba(201,168,76,0.2),0 8px 32px rgba(201,168,76,0.12)}
+.btn--gold:hover{box-shadow:0 4px 16px rgba(201,168,76,0.3),0 16px 48px rgba(201,168,76,0.15);transform:translateY(-1px)}
+.btn--outline{background:transparent;color:var(--text-primary);border:1px solid var(--border-light)}
+.btn--outline:hover{border-color:var(--gold);color:var(--gold)}
+.btn--purple{background:linear-gradient(135deg,#7C3AED,#6D28D9);color:var(--white);box-shadow:0 2px 8px rgba(124,58,237,0.2)}
+.btn--purple:hover{box-shadow:0 4px 16px rgba(124,58,237,0.3);transform:translateY(-1px)}
+.btn--orange{background:linear-gradient(135deg,var(--orange),#D97706);color:var(--bg-dark);box-shadow:0 2px 8px rgba(245,158,11,0.2)}
+.btn--orange:hover{box-shadow:0 4px 16px rgba(245,158,11,0.3);transform:translateY(-1px)}
+.btn--cyan{background:linear-gradient(135deg,var(--cyan),#06B6D4);color:var(--bg-dark);box-shadow:0 2px 8px rgba(34,211,238,0.2)}
+.btn--cyan:hover{box-shadow:0 4px 16px rgba(34,211,238,0.3);transform:translateY(-1px)}
+.btn--primary{background:linear-gradient(135deg,var(--blue),#3B82F6);color:var(--white);box-shadow:0 2px 8px rgba(88,166,255,0.15)}
+.btn--primary:hover{box-shadow:0 4px 16px rgba(88,166,255,0.25);transform:translateY(-1px)}
+.btn--lg{padding:20px 44px;font-size:.95rem;border-radius:var(--radius-md)}
+.btn--sm{padding:12px 24px;font-size:.85rem}
+.btn--full{width:100%}
+
+/* ═══════════════════════════════════
+   SHARED COMPONENTS
+   ═══════════════════════════════════ */
+.photo{width:100%;height:100%;object-fit:cover;display:block;background:var(--bg-elevated)}
+.photo-frame{overflow:hidden;border-radius:var(--radius-md);background:var(--bg-elevated);position:relative}
+.photo-frame::after{content:'';position:absolute;inset:0;border:1px solid var(--border-subtle);border-radius:inherit;pointer-events:none}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1.2s var(--ease-out),transform 1.2s var(--ease-out)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}
+.reveal-d3{transition-delay:.3s}.reveal-d5{transition-delay:.5s}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ═══════════════════════════════════
+   HEADER
+   ═══════════════════════════════════ */
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:all .5s var(--ease);will-change:padding,background}
+.header.scrolled{padding:14px 0;background:rgba(8,12,20,0.85);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid var(--border-subtle)}
+.header .container{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--text-primary)}
+.logo-icon{width:40px;height:40px;object-fit:contain;transition:all .4s var(--ease)}
+.logo:hover .logo-icon{filter:drop-shadow(0 0 12px rgba(201,168,76,0.4));transform:scale(1.05)}
+.logo-name{height:20px;width:auto;object-fit:contain;transition:opacity .3s var(--ease)}
+.nav{display:flex;align-items:center;gap:36px}
+.nav a{color:var(--text-muted);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.3px;transition:color .3s var(--ease)}
+.nav a:hover{color:var(--text-primary)}
+.nav .btn{padding:10px 24px}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px}
+.burger span{width:20px;height:1.5px;background:var(--text-primary);border-radius:2px}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(5,8,16,0.97);backdrop-filter:blur(32px);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+.mobile-menu.active{display:flex}
+.mobile-menu a{color:var(--text-primary);text-decoration:none;font-size:1.1rem;font-weight:500}
+.mobile-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--text-primary);font-size:1.5rem;cursor:pointer}
+
+/* ═══════════════════════════════════
+   HERO
+   ═══════════════════════════════════ */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:140px 0 100px}
+.hero-video{position:absolute;inset:0;z-index:0}
+.hero-video video,.video-fallback{width:100%;height:100%;object-fit:cover}
+.video-fallback{background:linear-gradient(160deg,#050810 0%,#0a1628 30%,#0d1f3c 60%,#081020 100%)}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(5,8,16,0.75) 0%,rgba(8,12,20,0.6) 40%,rgba(8,12,20,0.8) 70%,var(--bg-dark) 100%)}
+.hero-grain{position:absolute;inset:0;z-index:2;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none}
+.hero .container{position:relative;z-index:3}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;padding:8px 18px 8px 14px;border-radius:100px;border:1px solid rgba(62,207,142,0.2);background:rgba(62,207,142,0.06);color:var(--green);font-size:.78rem;font-weight:600;margin-bottom:32px}
+.hero-badge .dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse-dot 2s ease infinite}
+.hero h1{font-family:var(--font-serif);font-size:clamp(2.8rem,5.5vw,4.2rem);font-weight:800;color:var(--text-primary);line-height:1.1;margin-bottom:24px;letter-spacing:-1.5px}
+.hero h1 .accent{background:linear-gradient(135deg,var(--gold),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-text{font-size:1.05rem;color:var(--text-secondary);margin-bottom:40px;line-height:1.8;max-width:500px}
+.hero-buttons{display:flex;gap:16px;margin-bottom:56px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:48px}
+.hero-stat{position:relative;padding-left:20px}
+.hero-stat::before{content:'';position:absolute;left:0;top:4px;bottom:4px;width:1px;background:var(--border-light)}
+.hero-stat:first-child{padding-left:0}
+.hero-stat:first-child::before{display:none}
+.stat-value{font-family:var(--font-mono);font-size:1.6rem;font-weight:700;color:var(--text-primary);display:block}
+.stat-label{font-size:.75rem;color:var(--text-muted);margin-top:4px}
+.hero-card{background:rgba(255,255,255,0.03);border:1px solid var(--border-subtle);border-radius:var(--radius-xl);padding:40px 36px;backdrop-filter:blur(20px);position:relative}
+.hero-card::before{content:'';position:absolute;top:0;left:32px;right:32px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-muted),transparent)}
+.hero-card-title{color:var(--text-primary);font-size:.95rem;font-weight:600;margin-bottom:28px;display:flex;align-items:center;gap:12px}
+.h-step{display:flex;align-items:flex-start;gap:16px;padding:14px 0}
+.h-step+.h-step{border-top:1px solid var(--border-subtle)}
+.h-step-num{width:32px;height:32px;min-width:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:var(--white);background:var(--bg-elevated);border:1px solid var(--border-light)}
+.h-step-num--gold{border-color:var(--border-gold);color:var(--gold)}
+.h-step-num--purple{border-color:rgba(167,139,250,0.3);color:var(--purple)}
+.h-step h4{font-size:.85rem;font-weight:600;color:var(--text-primary);margin-bottom:2px}
+.h-step p{font-size:.78rem;color:var(--text-muted);line-height:1.5}
+
+/* ═══════════════════════════════════
+   PROBLEMS
+   ═══════════════════════════════════ */
+.problems-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:56px}
+.problem-card{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:36px;transition:all .5s var(--ease);position:relative;overflow:hidden}
+.problem-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--red-muted),transparent);opacity:0;transition:opacity .5s var(--ease)}
+.problem-card:hover{border-color:rgba(229,83,75,0.15);background:var(--bg-card-hover)}
+.problem-card:hover::before{opacity:1}
+.problem-img{width:100%;height:200px;border-radius:var(--radius-md);margin-bottom:20px;overflow:hidden}
+.problem-card h3{font-size:1.05rem;font-weight:700;color:var(--text-primary);margin-bottom:10px}
+.problem-card p{font-size:.9rem;color:var(--text-secondary);line-height:1.7}
+
+/* ═══════════════════════════════════
+   STEPS
+   ═══════════════════════════════════ */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px}
+.step{text-align:center;padding:0 24px;position:relative}
+.step::after{content:'';position:absolute;top:28px;left:calc(50% + 32px);width:calc(100% - 64px);height:1px;background:linear-gradient(90deg,var(--border-light),var(--border-subtle))}
+.step:last-child::after{display:none}
+.step-num{width:56px;height:56px;margin:0 auto 24px;border:1.5px solid var(--border-light);border-radius:16px;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:1rem;font-weight:700;color:var(--text-primary);background:var(--bg-card);transition:all .4s var(--ease);position:relative;z-index:1}
+.step:hover .step-num{border-color:var(--gold);color:var(--gold);box-shadow:var(--shadow-glow-gold)}
+.step:last-child .step-num{border-color:var(--border-gold);color:var(--gold)}
+.step h3{font-size:.95rem;font-weight:700;color:var(--text-primary);margin-bottom:8px}
+.step p{font-size:.85rem;color:var(--text-secondary);line-height:1.65}
+.step-time{display:inline-block;margin-top:16px;padding:5px 14px;border:1px solid var(--border-subtle);border-radius:100px;font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.5px}
+
+/* ═══════════════════════════════════
+   COHORT & SEASON (FOMO)
+   ═══════════════════════════════════ */
+.cohort-banner{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cohort-card{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:28px 32px;position:relative;overflow:hidden;transition:all .4s var(--ease)}
+.cohort-card:hover{border-color:var(--border-light)}
+.cohort-card--hot{border-color:rgba(245,158,11,0.2)}
+.cohort-card--hot::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--orange),var(--gold))}
+.cohort-label{font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.cohort-label--hot{color:var(--orange)}.cohort-label--open{color:var(--green)}
+.cohort-title{font-size:1.05rem;font-weight:700;color:var(--text-primary);margin-bottom:12px}
+.cohort-bar{height:6px;background:rgba(255,255,255,0.06);border-radius:100px;overflow:hidden;margin-bottom:8px}
+.cohort-fill{height:100%;border-radius:100px;transition:width 1.5s var(--ease)}
+.cohort-fill--hot{background:linear-gradient(90deg,var(--orange),var(--red))}
+.cohort-fill--open{background:linear-gradient(90deg,var(--green),var(--blue))}
+.cohort-phase{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;color:var(--text-secondary);margin-top:8px}
+.cohort-phase-dot{width:6px;height:6px;border-radius:50%;animation:pulse-dot 2s ease infinite}
+.cohort-phase-dot--green{background:var(--green)}
+.cohort-phase-dot--orange{background:var(--orange)}
+.cohort-phase-dot--blue{background:var(--blue)}
+
+.season-box{margin-top:24px;background:var(--bg-card);border:1px solid rgba(245,158,11,0.15);border-radius:var(--radius-lg);padding:28px 32px;text-align:center;position:relative;overflow:hidden}
+.season-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--orange),var(--gold))}
+.season-icon{font-size:1.5rem;margin-bottom:8px;display:block}
+.season-title{font-size:.95rem;font-weight:700;color:var(--orange);margin-bottom:4px}
+.season-subtitle{font-size:.82rem;color:var(--text-muted);margin-bottom:16px}
+.season-countdown{display:flex;justify-content:center;gap:16px;margin-bottom:16px}
+.season-unit{text-align:center}
+.season-num{font-family:var(--font-mono);font-size:1.6rem;font-weight:700;color:var(--text-primary);display:block;width:48px;height:48px;line-height:48px;background:var(--bg-elevated);border:1px solid var(--border-subtle);border-radius:var(--radius)}
+.season-lbl{font-size:.6rem;color:var(--text-muted);margin-top:4px;letter-spacing:1px;text-transform:uppercase}
+.season-tip{margin-top:12px;padding:12px 16px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.12);border-radius:var(--radius);font-size:.82rem;color:var(--text-secondary);line-height:1.6}
+.season-tip strong{color:var(--orange);font-family:var(--font-mono)}
+
+/* ═══════════════════════════════════
+   COMPARISON TABLE
+   ═══════════════════════════════════ */
+.comp-table{margin-top:56px;border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden}
+.comp-row{display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid var(--border-subtle)}
+.comp-row:last-child{border-bottom:none}
+.comp-row--head{background:var(--bg-elevated)}
+.comp-row--head .comp-cell{font-size:.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted)}
+.comp-row--head .comp-cell:last-child{color:var(--gold)}
+.comp-cell{padding:16px 24px;font-size:.88rem;display:flex;align-items:center;gap:8px;color:var(--text-secondary)}
+.comp-cell:last-child{background:rgba(201,168,76,0.03);color:var(--gold-light);font-weight:500}
+.comp-cell strong{color:var(--text-primary);font-weight:600}
+.icon-yes{color:var(--green);font-weight:bold}
+.icon-no{color:var(--red);font-weight:bold}
+
+/* ═══════════════════════════════════
+   CAREER MAP
+   ═══════════════════════════════════ */
+.career-map{margin-top:56px}
+.career-start{background:var(--bg-card);border:1px solid rgba(88,166,255,0.2);border-radius:var(--radius-lg);padding:36px;text-align:center;max-width:700px;margin:0 auto 48px}
+.career-start h3{font-size:1.2rem;font-weight:700;color:var(--text-primary);margin-bottom:8px}
+.career-start p{font-size:.9rem;color:var(--text-secondary)}
+.career-start .stage-stats{display:flex;justify-content:center;gap:32px;margin-top:20px}
+.career-start .s-stat{text-align:center}
+.career-start .s-val{font-family:var(--font-mono);font-size:1.1rem;font-weight:700;display:block}
+.career-start .s-lbl{font-size:.7rem;color:var(--text-muted)}
+.career-arrow-center{text-align:center;padding:16px 0;color:var(--text-faint);font-size:.8rem}
+.career-arrow-center span{display:block;font-size:1.5rem;margin-bottom:4px}
+.career-branches{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:16px}
+.branch{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:32px;transition:all .5s var(--ease);position:relative;overflow:hidden}
+.branch:hover{transform:translateY(-4px);box-shadow:var(--shadow-elevated)}
+.branch--comfort{border-top:2px solid var(--blue)}
+.branch--comfort:hover{border-color:var(--blue);background:rgba(88,166,255,0.03)}
+.branch--capital{border-top:2px solid var(--orange)}
+.branch--capital:hover{border-color:var(--orange);background:rgba(245,158,11,0.03)}
+.branch--global{border-top:2px solid var(--cyan)}
+.branch--global:hover{border-color:var(--cyan);background:rgba(34,211,238,0.03)}
+.branch-badge{display:inline-flex;padding:4px 12px;border-radius:100px;font-size:.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
+.badge-blue{background:var(--blue-muted);color:var(--blue)}
+.badge-orange{background:var(--orange-muted);color:var(--orange)}
+.badge-cyan{background:var(--cyan-muted);color:var(--cyan)}
+.branch-img{width:100%;height:120px;border-radius:var(--radius);margin-bottom:16px;overflow:hidden}
+.branch h3{font-size:1.1rem;font-weight:700;color:var(--text-primary);margin-bottom:8px}
+.branch .b-desc{font-size:.85rem;color:var(--text-secondary);line-height:1.65;margin-bottom:16px}
+.branch-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+.b-stat{padding:10px;background:rgba(255,255,255,0.02);border:1px solid var(--border-subtle);border-radius:var(--radius);text-align:center}
+.b-stat .v{font-family:var(--font-mono);font-size:.95rem;font-weight:700;display:block}
+.b-stat .l{font-size:.65rem;color:var(--text-muted);margin-top:2px}
+.branch-features{list-style:none;margin-bottom:20px}
+.branch-features li{display:flex;align-items:flex-start;gap:8px;font-size:.82rem;color:var(--text-secondary);padding:4px 0}
+.ck{color:var(--green);font-weight:bold;font-size:.9rem;line-height:1.3}
+.branch-price{font-size:.85rem;color:var(--text-muted);margin-bottom:16px;padding-top:12px;border-top:1px solid var(--border-subtle)}
+.branch-price strong{color:var(--text-primary);font-family:var(--font-mono);font-size:1rem}
+
+/* ═══════════════════════════════════
+   PATH DETAIL SECTIONS
+   ═══════════════════════════════════ */
+.path-box{border:1px solid var(--border-subtle);border-radius:var(--radius-xl);overflow:hidden;margin-top:56px}
+.path-box--blue{border-color:rgba(88,166,255,0.12);background:rgba(88,166,255,0.02)}
+.path-box--orange{border-color:rgba(245,158,11,0.15);background:rgba(245,158,11,0.02)}
+.path-box--cyan{border-color:rgba(34,211,238,0.12);background:rgba(34,211,238,0.02)}
+.path-inner{display:grid;grid-template-columns:1.2fr 1fr}
+.path-content{padding:56px 48px}
+.path-content h3{font-family:var(--font-serif);font-size:1.7rem;font-weight:800;color:var(--text-primary);margin-bottom:16px;letter-spacing:-.5px}
+.path-content .p-desc{font-size:1rem;color:var(--text-secondary);line-height:1.75;margin-bottom:28px}
+.path-benefits{list-style:none}
+.path-benefits li{display:flex;align-items:flex-start;gap:14px;padding:16px 0;font-size:.92rem;border-bottom:1px solid var(--border-subtle);color:var(--text-secondary);line-height:1.65}
+.path-benefits li:last-child{border-bottom:none}
+.bdot{width:8px;height:8px;min-width:8px;border-radius:50%;margin-top:7px}
+.bdot-green{background:var(--green)}.bdot-gold{background:var(--gold)}.bdot-blue{background:var(--blue)}
+.bdot-purple{background:var(--purple)}.bdot-orange{background:var(--orange)}.bdot-cyan{background:var(--cyan)}
+.path-sidebar{padding:56px 40px;background:rgba(0,0,0,0.15);border-left:1px solid var(--border-subtle)}
+.price-box{text-align:center;padding:32px;background:rgba(255,255,255,0.03);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);margin-bottom:24px}
+.price-label{font-size:.78rem;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+.price-value{font-family:var(--font-mono);font-size:2.8rem;font-weight:700;color:var(--text-primary)}
+.price-value span{font-size:.85rem;color:var(--text-muted);font-weight:400}
+.price-value--sm{font-size:1.8rem}
+.price-note{font-size:.8rem;color:var(--text-muted);margin-top:8px}
+.roi-box{background:var(--green-muted);border:1px solid rgba(62,207,142,0.15);border-radius:var(--radius-md);padding:16px;margin-bottom:16px}
+.roi-box p{font-size:.82rem;color:var(--green);line-height:1.6}
+.roi-box strong{font-weight:700}
+.roi-box--cyan{background:var(--cyan-muted);border-color:rgba(34,211,238,0.15)}
+.roi-box--cyan p{color:var(--cyan)}
+.inst-box{background:var(--gold-muted);border:1px solid var(--border-gold);border-radius:var(--radius-md);padding:16px;margin-bottom:24px}
+.inst-box p{font-size:.82rem;color:var(--gold-light);line-height:1.5}
+.inst-box strong{color:var(--gold);font-weight:700}
+.inst-box--cyan{background:var(--cyan-muted);border-color:rgba(34,211,238,0.2)}
+.inst-box--cyan p{color:rgba(34,211,238,0.85)}
+.inst-box--cyan strong{color:var(--cyan)}
+.geo-title{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:32px 0 16px}
+.geo-title--cyan{color:var(--cyan)}
+.geo-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.geo-card{background:rgba(255,255,255,0.02);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:20px;text-align:center;transition:all .4s var(--ease)}
+.geo-card:hover{border-color:var(--border-gold);background:var(--gold-muted)}
+.geo-card--standalone{padding:24px;margin-top:32px}
+.geo-card-img{width:100%;height:50px;border-radius:var(--radius);margin-bottom:8px;overflow:hidden}
+.geo-card-img--tall{height:80px}
+.geo-card h4{font-size:.88rem;font-weight:600;color:var(--text-primary);margin-bottom:2px}
+.geo-card p{font-size:.75rem;color:var(--text-muted)}
+.geo-tag{display:inline-block;margin-top:6px;padding:2px 10px;background:var(--green-muted);color:var(--green);border-radius:100px;font-size:.65rem;font-weight:700}
+.geo-tag--orange{background:var(--orange-muted);color:var(--orange)}
+.geo-saving{margin-top:16px;padding:18px;background:var(--gold-muted);border:1px solid var(--border-gold);border-radius:var(--radius-md)}
+.geo-saving h4{font-size:.9rem;font-weight:700;color:var(--gold);margin-bottom:4px}
+.geo-saving p{font-size:.82rem;color:var(--text-secondary);line-height:1.6}
+.geo-saving--orange{background:var(--orange-muted);border-color:rgba(245,158,11,0.3)}
+.geo-saving--orange h4{color:var(--orange)}
+.geo-saving--cyan{background:var(--cyan-muted);border-color:rgba(34,211,238,0.2)}
+.geo-saving--cyan h4{color:var(--cyan)}
+.geo-saving--top{margin-top:24px}
+.flag-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.flag-card{background:rgba(255,255,255,0.02);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:20px;text-align:center;transition:all .4s var(--ease)}
+.flag-card:hover{border-color:rgba(34,211,238,0.3);background:var(--cyan-muted)}
+.flag-emoji{font-size:2rem;margin-bottom:8px;display:block}
+.flag-card h4{font-size:.85rem;font-weight:600;color:var(--text-primary);margin-bottom:2px}
+.flag-card p{font-size:.7rem;color:var(--text-muted);line-height:1.4}
+
+/* ═══════════════════════════════════
+   TRANSPARENCY
+   ═══════════════════════════════════ */
+.transparency-wrap{max-width:720px;margin:0 auto}
+.transparency-desc{font-size:.95rem;color:var(--text-secondary);line-height:1.8;margin-top:20px}
+.transparency-desc--bold{color:var(--text-primary);font-weight:600;margin-top:16px}
+.transparency-compare{max-width:800px;margin:40px auto 0}
+.transparency-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.t-card{border-radius:var(--radius-lg);padding:32px}
+.t-card--bad{background:rgba(229,83,75,0.05);border:1px solid rgba(229,83,75,0.15)}
+.t-card--good{background:rgba(62,207,142,0.05);border:1px solid rgba(62,207,142,0.15)}
+.t-heading{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.t-rows{display:flex;flex-direction:column;gap:12px}
+.t-row{display:flex;justify-content:space-between;align-items:center}
+.t-row--line{padding-bottom:12px}
+.t-row--line-bad{border-bottom:1px solid rgba(229,83,75,0.1)}
+.t-row--line-good{border-bottom:1px solid rgba(62,207,142,0.1)}
+.t-text{font-size:.88rem;color:var(--text-secondary)}
+.t-value{font-size:.88rem;color:var(--text-primary);font-weight:600}
+.t-total{font-size:.95rem;color:var(--text-primary);font-weight:700}
+.t-total-mono{font-family:var(--font-mono);font-size:1.1rem;font-weight:700}
+.transparency-advice{margin-top:24px;padding:20px 24px;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);text-align:center}
+.transparency-advice p{font-size:.88rem;color:var(--text-secondary);line-height:1.7}
+
+/* ═══════════════════════════════════
+   PRICING
+   ═══════════════════════════════════ */
+.pricing-tabs{display:flex;justify-content:center;gap:4px;margin-bottom:48px;background:var(--bg-elevated);border-radius:var(--radius-md);padding:4px;max-width:400px;margin-left:auto;margin-right:auto}
+.pricing-tab{flex:1;padding:14px 24px;border:none;background:transparent;border-radius:var(--radius);font-family:var(--font-sans);font-size:.88rem;font-weight:600;color:var(--text-muted);cursor:pointer;transition:all .35s var(--ease);text-align:center}
+.pricing-tab:hover{color:var(--text-primary)}
+.pricing-tab.active{background:var(--gold);color:var(--bg-dark);box-shadow:0 2px 8px rgba(201,168,76,0.25)}
+.pricing-panel{display:none}
+.pricing-panel.active{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.p-card{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:40px 32px;position:relative;transition:all .5s var(--ease)}
+.p-card:hover{border-color:var(--border-light);transform:translateY(-4px);box-shadow:var(--shadow-elevated)}
+.p-card--popular{border-color:var(--border-gold);box-shadow:var(--shadow-glow-gold)}
+.p-card--premium{border-color:rgba(167,139,250,0.2)}
+.card-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:5px 18px;border-radius:100px;font-size:.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
+.card-badge--gold{background:var(--gold);color:var(--bg-dark)}
+.card-badge--purple{background:var(--purple);color:var(--white)}
+.p-card h3{font-size:1.1rem;font-weight:700;color:var(--text-primary);margin-bottom:6px}
+.p-card .p-desc{font-size:.82rem;color:var(--text-muted);margin-bottom:24px;line-height:1.5}
+.p-amount{font-family:var(--font-mono);font-size:2.4rem;font-weight:700;color:var(--text-primary);margin-bottom:4px}
+.p-amount span{font-size:.85rem;color:var(--text-muted);font-weight:400}
+.p-note{font-size:.75rem;color:var(--text-muted);margin-bottom:24px}
+.p-features{list-style:none;margin-bottom:24px}
+.p-features li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;font-size:.85rem;color:var(--text-secondary);border-bottom:1px solid var(--border-subtle)}
+.p-features li:last-child{border-bottom:none}
+.p-features .no{color:var(--text-faint);font-size:.95rem;line-height:1.3}
+.p-inst{background:var(--gold-muted);border:1px solid var(--border-gold);border-radius:var(--radius);padding:12px;margin-bottom:16px;text-align:center}
+.p-inst p{font-size:.78rem;color:var(--gold-light)}
+.p-inst strong{color:var(--gold)}
+.p-req{background:var(--purple-muted);border:1px solid rgba(167,139,250,0.2);border-radius:var(--radius);padding:12px;margin-bottom:16px;text-align:center}
+.p-req p{font-size:.78rem;color:var(--purple)}
+.pricing-note{text-align:center;margin-top:32px;font-size:.85rem;color:var(--text-muted);line-height:1.6;max-width:600px;margin-left:auto;margin-right:auto}
+
+/* ═══════════════════════════════════
+   CALCULATOR
+   ═══════════════════════════════════ */
+.chip-group{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 18px;background:var(--bg-elevated);border:1px solid var(--border-subtle);border-radius:var(--radius-md);font-family:var(--font-sans);font-size:.85rem;font-weight:600;color:var(--text-secondary);cursor:pointer;transition:all .35s var(--ease);white-space:nowrap;position:relative;overflow:hidden}
+.chip::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.08),transparent);opacity:0;transition:opacity .35s var(--ease)}
+.chip:hover{border-color:var(--gold);color:var(--text-primary);background:rgba(201,168,76,0.04)}
+.chip:hover::before{opacity:1}
+.chip.active{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.08);box-shadow:0 0 20px rgba(201,168,76,0.08),inset 0 0 20px rgba(201,168,76,0.03)}
+.chip.active::before{opacity:1}
+.chip-sub{font-size:.65rem;font-weight:400;color:var(--text-muted);letter-spacing:.3px}
+.chip.active .chip-sub{color:var(--gold-light)}
+.chip.locked-chip{opacity:.25;pointer-events:none;cursor:not-allowed}
+.chip.disabled{opacity:.3;pointer-events:none;cursor:not-allowed}
+.chip-group.locked .chip:not([data-value="0"]){opacity:.3;pointer-events:none}
+.calc-group label{display:block;font-size:.72rem;font-weight:600;color:var(--text-muted);margin-bottom:10px;letter-spacing:.8px;text-transform:uppercase}
+.calc-result{background:linear-gradient(160deg,var(--bg-elevated),rgba(201,168,76,0.03));border:1px solid var(--border-subtle);border-radius:var(--radius-lg);position:relative;overflow:hidden}
+.calc-result::before{content:'';position:absolute;top:0;left:24px;right:24px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-muted),transparent)}
+.calc-item{padding:20px 32px;border-bottom:1px solid var(--border-subtle);display:flex;justify-content:space-between;align-items:center;transition:background .3s var(--ease)}
+.calc-item:hover{background:rgba(255,255,255,0.02)}
+.calc-item:last-child{border-bottom:none;padding-bottom:24px}
+.calc-item:first-child{padding-top:24px}
+.calc-item--loss{background:rgba(229,83,75,0.04)}
+.calc-item--loss .calc-label{color:var(--red)}
+.calc-label{font-size:.99rem;color:var(--text-muted);letter-spacing:.5px;font-weight:500}
+.calc-val{font-family:var(--font-mono);font-size:1.3rem;font-weight:700;color:var(--text-primary);letter-spacing:-.3px;text-align:right}
+.calc-val--green{color:var(--green)}.calc-val--gold{color:var(--gold)}.calc-val--red{color:var(--red)!important}
+.calc-no-result{padding:40px 32px;text-align:center;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);margin-top:20px}
+.calc-no-icon{font-size:2rem;margin-bottom:16px;opacity:.3}
+.calc-no-result h4{font-size:1.1rem;font-weight:700;color:var(--text-primary);margin-bottom:12px}
+.calc-no-result p{font-size:.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:20px}
+.calc-no-cta{font-size:.9rem;font-weight:600;color:var(--gold);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.flight-warning{margin-top:10px;font-size:.78rem;line-height:1.5;padding:0;border-radius:var(--radius);transition:all .4s var(--ease)}
+.flight-warning.show{padding:12px 16px;background:rgba(229,83,75,0.06);border:1px solid rgba(229,83,75,0.15)}
+.flight-warning p{color:var(--red);font-weight:500}
+.flight-warning .warn-highlight{font-family:var(--font-mono);font-weight:700;color:var(--red)}
+.flight-warning .warn-cta{color:var(--gold);font-weight:600;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.flight-warning .warn-cta:hover{color:var(--gold-light)}
+.calc-outer{display:grid;grid-template-columns:1fr 120px;gap:24px;align-items:start}
+.roi-gauge-sticky{position:sticky;top:100px;height:fit-content}
+.roi-gauge{display:flex;flex-direction:column;align-items:center;gap:10px}
+.roi-gauge-value{font-family:var(--font-mono);font-size:1.4rem;font-weight:700;color:var(--gold);text-align:center;line-height:1.2}
+.roi-gauge-label{font-size:.6rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);text-align:center}
+.roi-gauge-track{width:28px;height:420px;background:rgba(255,255,255,0.03);border:1px solid var(--border-subtle);border-radius:100px;position:relative;overflow:visible;box-shadow:inset 0 2px 8px rgba(0,0,0,0.3)}
+.roi-gauge-fill{position:absolute;bottom:0;left:-1px;right:-1px;border-radius:100px;background:linear-gradient(to top,#58A6FF 0%,#7DD3C8 40%,var(--gold-light) 70%,var(--gold) 100%);transition:height 2s cubic-bezier(0.22,1,0.36,1);box-shadow:0 0 16px rgba(201,168,76,0.2),0 0 32px rgba(88,166,255,0.15),inset 0 1px 1px rgba(255,255,255,0.15)}
+.roi-gauge-marker{position:absolute;left:50%;transform:translate(-50%,-50%);width:48px;height:28px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;transition:bottom 2s cubic-bezier(0.22,1,0.36,1);z-index:2}
+.roi-gauge-marker-value{font-family:var(--font-mono);font-size:.7rem;font-weight:700;color:var(--text-primary)}
+.roi-gauge-tick{position:absolute;left:-14px;width:10px;height:2px;background:rgba(255,255,255,0.2);transition:bottom 2s cubic-bezier(0.22,1,0.36,1);z-index:1}
+.roi-gauge-marks{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}
+.roi-gauge-mark{position:relative;width:100%;display:flex;align-items:center}
+.roi-gauge-mark::after{content:'';position:absolute;left:-12px;width:8px;height:2px;background:rgba(255,255,255,0.12)}
+.roi-gauge-mark-label{position:absolute;left:-48px;font-size:.55rem;font-weight:600;color:var(--text-faint);font-family:var(--font-mono);white-space:nowrap}
+.roi-gauge-caption{font-size:.58rem;color:var(--text-faint);text-align:center;line-height:1.3;max-width:90px}
+
+/* ═══════════════════════════════════
+   TRUST / ANTI-FRAUD
+   ═══════════════════════════════════ */
+.anti-fraud-subtitle{font-size:1.05rem;color:var(--text-secondary);margin-bottom:48px;max-width:640px;line-height:1.75}
+.guarantee-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.g-item{display:flex;align-items:flex-start;gap:16px;padding:24px;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);transition:all .4s var(--ease)}
+.g-item:hover{border-color:var(--border-light)}
+.g-check{width:28px;height:28px;min-width:28px;border-radius:7px;background:var(--green-muted);display:flex;align-items:center;justify-content:center;color:var(--green);font-size:.85rem;font-weight:bold}
+.g-item h4{font-size:.9rem;font-weight:600;color:var(--text-primary);margin-bottom:4px}
+.g-item p{font-size:.8rem;color:var(--text-muted);line-height:1.55}
+
+/* ═══════════════════════════════════
+   REVIEWS
+   ═══════════════════════════════════ */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.review-card{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:36px;transition:all .5s var(--ease)}
+.review-card:hover{border-color:var(--border-light);box-shadow:var(--shadow-card)}
+.review-stars{color:var(--gold);font-size:.9rem;margin-bottom:16px;letter-spacing:3px}
+.review-text{font-size:.88rem;color:var(--text-secondary);line-height:1.75;margin-bottom:24px;font-style:italic}
+.review-author{display:flex;align-items:center;gap:12px}
+.review-avatar{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:var(--white)}
+.review-avatar--blue{background:linear-gradient(135deg,#1e40af,#3b82f6)}
+.review-avatar--purple{background:linear-gradient(135deg,#6d28d9,#a78bfa)}
+.review-avatar--orange{background:linear-gradient(135deg,#b45309,#f59e0b)}
+.review-name{font-weight:600;color:var(--text-primary);font-size:.88rem}
+.review-role{font-size:.75rem;color:var(--text-muted)}
+.review-badge{display:inline-block;padding:2px 10px;border-radius:100px;font-size:.65rem;font-weight:600;margin-top:4px}
+.rb-purple{background:var(--purple-muted);color:var(--purple)}
+.rb-orange{background:var(--orange-muted);color:var(--orange)}
+
+/* ═══════════════════════════════════
+   FAQ
+   ═══════════════════════════════════ */
+.faq-list{max-width:780px;margin:56px auto 0}
+.faq-item{border-bottom:1px solid var(--border-subtle)}
+.faq-item.active{border-bottom-color:transparent}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:22px 0;background:none;border:none;cursor:pointer;font-family:var(--font-sans);font-size:.95rem;font-weight:600;color:var(--text-primary);text-align:left;transition:color .3s var(--ease);gap:16px}
+.faq-q:hover{color:var(--gold)}
+.faq-icon{width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--text-muted);transition:all .4s var(--ease)}
+.faq-item.active .faq-icon{transform:rotate(45deg);color:var(--gold)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
+.faq-item.active .faq-a{max-height:600px}
+.faq-a-inner{padding:0 0 24px;font-size:.9rem;color:var(--text-secondary);line-height:1.75}
+
+/* ═══════════════════════════════════
+   REFERRAL
+   ═══════════════════════════════════ */
+.referral-box{display:flex;align-items:center;justify-content:space-between;gap:40px;padding:48px;border:1px solid var(--border-gold);border-radius:var(--radius-xl);background:var(--gold-muted)}
+.referral-box h3{font-size:1.3rem;font-weight:700;color:var(--text-primary);margin-bottom:8px}
+.referral-box>div:first-child p{color:var(--text-secondary);font-size:.95rem}
+.ref-amount{text-align:center;min-width:160px}
+.ref-amount .val{font-family:var(--font-mono);font-size:2.2rem;font-weight:700;color:var(--gold)}
+.ref-amount .lbl{font-size:.78rem;color:var(--text-muted)}
+
+/* ═══════════════════════════════════
+   CTA / FORM
+   ═══════════════════════════════════ */
+.cta{text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,0.06),transparent 70%);border-radius:50%;pointer-events:none}
+.cta-video-bg{position:absolute;inset:0;z-index:0}
+.cta-video-bg video{width:100%;height:100%;object-fit:cover}
+.cta-video-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,20,0.85) 0%,rgba(8,12,20,0.7) 40%,rgba(8,12,20,0.85) 100%)}
+.cta .container{position:relative;z-index:1}
+.cta-subtitle{color:var(--text-secondary);font-size:1.05rem;margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto}
+.cta-form{max-width:440px;margin:0 auto;position:relative;z-index:2}
+.form-group{margin-bottom:14px}
+.form-group input,.form-group select{width:100%;padding:16px 20px;background:var(--bg-elevated);border:1px solid var(--border-subtle);border-radius:var(--radius);font-family:var(--font-sans);font-size:.9rem;color:var(--text-primary);transition:all .3s var(--ease)}
+.form-group select option{color:var(--bg-dark);background:var(--white)}
+.form-group input::placeholder{color:var(--text-muted)}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--gold)}
+.form-submit{width:100%;margin-top:8px}
+.form-note{font-size:.75rem;color:var(--text-muted);margin-top:16px}
+.form-success{display:none;text-align:center;padding:40px 20px}
+.form-success.show{display:block}
+.form-success .s-icon{width:64px;height:64px;border-radius:50%;background:var(--green-muted);display:flex;align-items:center;justify-content:center;color:var(--green);font-size:1.5rem;margin:0 auto 16px}
+.form-success h3{font-size:1.3rem;color:var(--text-primary);margin-bottom:8px}
+.form-success p{color:var(--text-secondary)}
+
+/* ═══════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════ */
+.footer{background:var(--bg-deepest);padding:80px 0 32px;border-top:1px solid var(--border-subtle)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer-brand p{font-size:.85rem;color:var(--text-muted);line-height:1.7;margin-top:16px}
+.footer h4{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px}
+.footer ul{list-style:none}
+.footer ul li{margin-bottom:10px}
+.footer ul a{color:var(--text-muted);text-decoration:none;font-size:.85rem;transition:color .3s var(--ease)}
+.footer ul a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid var(--border-subtle);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--text-faint)}
+.footer-legal a{color:var(--text-faint);text-decoration:none;margin-left:20px;transition:color .3s}
+.footer-legal a:hover{color:var(--text-secondary)}
+
+/* ═══════════════════════════════════
+   FLOATING ELEMENTS
+   ═══════════════════════════════════ */
+.float-cta{position:fixed;bottom:28px;right:28px;z-index:900;opacity:0;transform:translateY(16px);transition:all .5s var(--ease);pointer-events:none;will-change:opacity,transform}
+.float-cta.visible{opacity:1;transform:translateY(0);pointer-events:all}
+.contact-trigger{position:fixed;bottom:28px;left:28px;z-index:900;opacity:0;transform:translateY(16px);transition:all .5s var(--ease);pointer-events:none;will-change:opacity,transform}
+.contact-trigger.visible{opacity:1;transform:translateY(0);pointer-events:all}
+.contact-trigger-btn{display:flex;align-items:center;gap:10px;padding:14px 28px;border:none;cursor:pointer;background:linear-gradient(135deg,var(--gold),#B8953A);color:var(--bg-dark);font-family:var(--font-sans);font-size:.85rem;font-weight:700;letter-spacing:.3px;border-radius:100px;box-shadow:0 4px 24px rgba(201,168,76,0.3);transition:all .4s var(--ease);position:relative}
+.contact-trigger-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(201,168,76,0.4)}
+.contact-trigger-btn svg{width:18px;height:18px;stroke:currentColor;fill:none}
+.contact-trigger-dot{position:absolute;top:-2px;right:-2px;width:12px;height:12px;border-radius:50%;background:var(--green);border:2px solid var(--bg-dark);animation:pulse-dot 2s ease infinite}
+
+/* ═══════════════════════════════════
+   CONTACT BOTTOM SHEET
+   ═══════════════════════════════════ */
+.sheet-overlay{display:none;position:fixed;inset:0;z-index:1500;background:rgba(5,8,16,0.6);backdrop-filter:blur(8px);opacity:0;transition:opacity .4s var(--ease)}
+.sheet-overlay.active{display:block;opacity:1}
+.sheet{position:fixed;bottom:0;left:0;right:0;z-index:1501;transform:translateY(100%);transition:transform .5s cubic-bezier(0.34,1.56,0.64,1);pointer-events:none;will-change:transform}
+.sheet.open{transform:translateY(0);pointer-events:all}
+.sheet-inner{background:rgba(17,24,32,0.92);backdrop-filter:blur(40px) saturate(180%);border-top:1px solid rgba(255,255,255,0.08);border-radius:20px 20px 0 0;padding:0 24px 32px;max-width:600px;margin:0 auto;position:relative;overflow:hidden}
+.sheet-inner::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:sheet-shimmer 3s ease infinite}
+@keyframes sheet-shimmer{0%,100%{opacity:.4}50%{opacity:.8}}
+.sheet-handle{display:flex;justify-content:center;padding:12px 0 8px;cursor:grab}
+.sheet-handle-bar{width:36px;height:4px;border-radius:100px;background:rgba(255,255,255,0.15);transition:background .3s var(--ease)}
+.sheet-handle:hover .sheet-handle-bar{background:rgba(255,255,255,0.3)}
+.sheet-status{text-align:center;padding:4px 0 20px}
+.sheet-status-text{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted)}
+.sheet-status-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse-dot 2s ease infinite}
+.sheet-messengers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.sheet-msg-card{display:flex;flex-direction:column;align-items:center;gap:8px;padding:20px 12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:16px;text-decoration:none;transition:all .35s var(--ease);opacity:0;transform:translateY(12px)}
+.sheet.open .sheet-msg-card{opacity:1;transform:translateY(0)}
+.sheet.open .sheet-msg-card:nth-child(1){transition-delay:.1s}
+.sheet.open .sheet-msg-card:nth-child(2){transition-delay:.18s}
+.sheet.open .sheet-msg-card:nth-child(3){transition-delay:.26s}
+.sheet-msg-card:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.12);transform:translateY(-2px)}
+.sheet-msg-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.sheet-msg-icon svg{width:22px;height:22px;fill:white}
+.sheet-msg-icon img{width:22px;height:22px;border-radius:4px}
+.sheet-msg-icon--wa{background:#25D366}
+.sheet-msg-icon--tg{background:#2AABEE}
+.sheet-msg-icon--max{background:linear-gradient(135deg,#2AABEE,#8B5CF6)}
+.sheet-msg-card:hover .sheet-msg-icon--wa{background:#20BD5A}
+.sheet-msg-card:hover .sheet-msg-icon--tg{background:#229ED9}
+.sheet-msg-card:hover .sheet-msg-icon--max{background:linear-gradient(135deg,#229ED9,#7C3AED)}
+.sheet-msg-name{font-size:.82rem;font-weight:600;color:var(--text-primary)}
+.sheet-msg-sub{font-size:.65rem;color:var(--text-muted);text-align:center;line-height:1.3}
+.sheet-util{display:flex;gap:8px;opacity:0;transform:translateY(8px);transition:all .4s var(--ease) .3s}
+.sheet.open .sheet-util{opacity:1;transform:translateY(0)}
+.sheet-util-btn{display:flex;align-items:center;gap:10px;padding:14px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;cursor:pointer;font-family:var(--font-sans);transition:all .3s var(--ease);text-decoration:none;color:inherit}
+.sheet-util-btn:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.12)}
+.sheet-util-btn:active{transform:scale(0.97)}
+.sheet-util-phone{flex:0 0 15%;justify-content:center}
+.sheet-util-email{flex:1;min-width:0}
+.sheet-util-icon{width:32px;height:32px;min-width:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:rgba(201,168,76,0.1)}
+.sheet-util-icon svg{width:16px;height:16px;stroke:var(--gold);fill:none}
+.sheet-util-text{min-width:0;overflow:hidden}
+.sheet-util-label{font-size:.75rem;font-weight:600;color:var(--text-primary)}
+.sheet-util-value{font-size:.68rem;color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sheet-toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--bg-elevated);border:1px solid var(--border-subtle);border-radius:var(--radius);padding:10px 20px;font-family:var(--font-sans);font-size:.82rem;font-weight:600;color:var(--green);opacity:0;pointer-events:none;z-index:1600;transition:all .4s var(--ease);box-shadow:0 8px 32px rgba(0,0,0,0.3)}
+.sheet-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ═══════════════════════════════════
+   EXIT INTENT POPUP
+   ═══════════════════════════════════ */
+.exit-overlay{display:none;position:fixed;inset:0;z-index:2000;background:rgba(5,8,16,0.85);backdrop-filter:blur(12px);align-items:center;justify-content:center}
+.exit-overlay.active{display:flex}
+.exit-popup{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-xl);padding:48px;max-width:460px;width:90%;position:relative;text-align:center;box-shadow:var(--shadow-elevated)}
+.exit-popup::before{content:'';position:absolute;top:0;left:32px;right:32px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-muted),transparent)}
+.exit-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--text-muted);font-size:1.2rem;cursor:pointer;padding:4px;transition:color .3s var(--ease)}
+.exit-close:hover{color:var(--text-primary)}
+.exit-popup h3{font-family:var(--font-serif);font-size:1.5rem;font-weight:800;color:var(--text-primary);margin-bottom:8px}
+.exit-popup .exit-sub{font-size:.95rem;color:var(--text-secondary);margin-bottom:8px}
+.exit-highlight{font-family:var(--font-mono);font-size:2rem;font-weight:700;color:var(--gold);margin:16px 0}
+.exit-form{display:flex;gap:8px;margin-top:24px}
+.exit-form input{flex:1;padding:14px 16px;background:var(--bg-elevated);border:1px solid var(--border-subtle);border-radius:var(--radius);font-family:var(--font-sans);font-size:.9rem;color:var(--text-primary);transition:border-color .3s var(--ease)}
+.exit-form input:focus{outline:none;border-color:var(--gold)}
+.exit-form input::placeholder{color:var(--text-muted)}
+.exit-or{margin-top:16px;font-size:.82rem;color:var(--text-muted)}
+.exit-or a{color:var(--blue);text-decoration:none;font-weight:600}
+.exit-or a:hover{color:var(--gold)}
+.exit-success{display:none}
+.exit-success.show{display:block}
+.exit-success p{color:var(--green);font-size:1rem;font-weight:600}
+
+/* ═══════════════════════════════════
+   RESPONSIVE — CONSOLIDATED
+   ═══════════════════════════════════ */
+@media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .sheet{transition:none}
+    .sheet-msg-card{transition:none;opacity:1;transform:none}
+    .sheet-util{transition:none;opacity:1;transform:none}
+}
+
+@media(max-width:1024px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-card{max-width:100%}
+    .steps-grid{grid-template-columns:repeat(2,1fr);gap:32px}
+    .step::after{display:none}
+    .pricing-panel.active,.career-branches{grid-template-columns:1fr 1fr}
+    .footer-grid{grid-template-columns:repeat(2,1fr)}
+    .path-inner{grid-template-columns:1fr}
+    .path-sidebar{border-left:none;border-top:1px solid var(--border-subtle)}
+    .flag-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:768px){
+    /* layout */
+    .container{padding:0 20px}
+    .section{padding:80px 0}
+    .title{font-size:clamp(1.8rem,5vw,2.4rem)}
+
+    /* header */
+    .nav{display:none}
+    .burger{display:flex}
+
+    .logo-icon{width:32px;height:32px}
+.logo-name{height:16px}
+
+    /* hero */
+    .hero{min-height:auto;padding:120px 0 60px}
+    .hero h1{font-size:clamp(2rem,7vw,2.8rem)}
+    .hero-stats{flex-wrap:wrap;gap:20px}
+    .hero-buttons{flex-direction:column}
+    .hero-buttons .btn{width:100%}
+
+    /* grids → single column */
+    .problems-grid,.pricing-panel.active,.reviews-grid,.guarantee-grid,
+    .career-branches,.geo-grid,.flag-grid,.comp-row,
+    .transparency-grid,.cohort-banner{grid-template-columns:1fr}
+    .comp-row--head{display:none}
+    .steps-grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}
+
+    /* fomo */
+    .season-countdown{gap:10px}
+    .season-num{font-size:1.2rem;width:40px;height:40px;line-height:40px}
+
+    /* calculator */
+    .calc-outer{grid-template-columns:1fr 90px;gap:12px}
+    .calc-item{padding:16px 20px;flex-direction:column;align-items:flex-start;gap:4px}
+    .calc-val{text-align:left;font-size:1.2rem}
+    .chip{padding:10px 14px;font-size:.78rem}
+    .chip-sub{font-size:.6rem}
+
+    /* roi gauge */
+    .roi-gauge-track{height:320px;width:22px}
+    .roi-gauge-value{font-size:1.1rem}
+    .roi-gauge-sticky{top:80px}
+    .roi-gauge-marker{width:40px;height:24px}
+    .roi-gauge-marker-value{font-size:.6rem}
+    .roi-gauge-mark-label{left:-38px;font-size:.48rem}
+
+    /* path details */
+    .path-content,.path-sidebar{padding:32px 24px}
+
+    /* referral */
+    .referral-box{flex-direction:column;text-align:center;padding:32px 24px}
+
+    /* footer */
+    .footer-grid{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+
+    /* contact sheet */
+    .contact-trigger{bottom:30px;left:20px}
+    .contact-trigger-btn{padding:12px 22px;font-size:.8rem}
+    .sheet-inner{padding:0 16px 24px;border-radius:16px 16px 0 0}
+    .sheet-messengers{grid-template-columns:1fr;gap:8px}
+    .sheet-msg-card{flex-direction:row;padding:16px;gap:12px}
+    .sheet-msg-name,.sheet-msg-sub{text-align:left}
+    .sheet-util{flex-direction:row}
+    .sheet-util-phone{flex:0 0 15%}
+    .sheet-util-email{flex:1}
+    .sheet-util-btn{padding:12px}
+
+    /* exit popup */
+    .exit-popup{padding:32px 24px}
+    .exit-form{flex-direction:column}
+
+    /* ═══ PERFORMANCE: mobile GPU savings ═══ */
+
+
+    .header.scrolled{backdrop-filter:blur(16px) saturate(150%);-webkit-backdrop-filter:blur(16px) saturate(150%);background:rgba(8,12,20,0.75)}
+    .hero-card{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(20,28,39,0.95)}
+    .sheet-inner{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(17,24,32,0.98)}
+    .sheet-overlay{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(5,8,16,0.85)}
+    .roi-gauge-marker{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(26,35,50,0.95)}
+    .exit-overlay{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(5,8,16,0.92)}
+    .mobile-menu{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(5,8,16,0.98)}
+}
+
+@media(max-width:480px){
+    .reveal{opacity:1;transform:none;transition:none}
+}
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+    <div class="container">
+<a href="#" class="logo">
+    <img src="assets/images/logo-anchor.png" alt="CrewPoint" class="logo-icon" width="40" height="40">
+    <img src="assets/images/logo-text.png" alt="CrewPoint" class="logo-name" height="20">
+</a>
+        <nav class="nav">
+            <a href="#how">Как это работает</a>
+            <a href="#career">Карьерная карта</a>
+            <a href="#pricing">Стоимость</a>
+            <a href="#trust">Гарантии</a>
+            <a href="#faq">Вопросы</a>
+            <a href="#form" class="btn btn--gold btn--sm">Оставить заявку</a>
+        </nav>
+        <button class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" onclick="toggleMenu()">&#x2715;</button>
+    <a href="#how" onclick="toggleMenu()">Как это работает</a>
+    <a href="#career" onclick="toggleMenu()">Карьерная карта</a>
+    <a href="#pricing" onclick="toggleMenu()">Стоимость</a>
+    <a href="#trust" onclick="toggleMenu()">Гарантии</a>
+    <a href="#faq" onclick="toggleMenu()">Вопросы</a>
+    <a href="#form" class="btn btn--gold" onclick="toggleMenu()">Оставить заявку</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-video">
+        <video autoplay loop muted playsinline preload="none">
+            <source src="assets/video/sea-loop12.webm" type="video/webm">
+        </video>
+        <div class="video-fallback"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-grain"></div>
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge"><span class="dot"></span> Набор открыт — осталось 12 мест</div>
+                <h1>От нуля до <span class="accent">карьеры в море</span> за 1 месяц</h1>
+                <p class="hero-text">Организуем ускоренное получение морских документов за 14 дней и подберём первый контракт. Полная стоимость — на сайте, без скрытых доплат. После набора ценза — три карьерных пути: ближние порты, краболовный флот Камчатки или международные суда под иностранным флагом.</p>
+                <div class="hero-buttons">
+                    <a href="#form" class="btn btn--gold btn--lg">Начать карьеру в море &rarr;</a>
+                    <a href="#career" class="btn btn--outline btn--lg">Карьерная карта</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat"><span class="stat-value">500+</span><span class="stat-label">Моряков прошли через нас</span></div>
+                    <div class="hero-stat"><span class="stat-value">14</span><span class="stat-label">Дней — срок подготовки</span></div>
+                    <div class="hero-stat"><span class="stat-value">4.9</span><span class="stat-label">Средняя оценка</span></div>
+                </div>
+            </div>
+            <div>
+                <div class="hero-card">
+                    <div class="hero-card-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg>
+                        Ваш путь в море
+                    </div>
+                    <div class="h-step"><div class="h-step-num">1</div><div><h4>Оставляете заявку</h4><p>Бесплатная консультация за 15 минут</p></div></div>
+                    <div class="h-step"><div class="h-step-num">2</div><div><h4>Подготовка документов за 14 дней</h4><p>Вместо до 5 месяцев самостоятельного хождения по инстанциям</p></div></div>
+                    <div class="h-step"><div class="h-step-num h-step-num--gold">3</div><div><h4>Первый контракт и выход в рейс</h4><p>Подбор вакансии, собеседования, посадка на судно</p></div></div>
+                    <div class="h-step"><div class="h-step-num h-step-num--purple">4</div><div><h4>Повышение квалификации</h4><p>Три карьерных пути на выбор после набора ценза</p></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROBLEMS -->
+<section class="section bg-navy">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Знакомо?</span>
+            <h2 class="title">Почему самому — долго, дорого и нервно</h2>
+            <p class="subtitle">Большинство теряют 2–3 месяца и переплачивают, пытаясь разобраться в одиночку</p>
+        </div>
+        <div class="problems-grid">
+            <div class="problem-card reveal">
+                <div class="problem-img photo-frame"><img src="assets/images/clock-waiting.webp" alt="Долгое ожидание документов" class="photo" loading="lazy" width="600" height="400" decoding="async"></div>
+                <h3>До 5 месяцев ожидания</h3>
+                <p>Медкомиссия, дактилоскопия, учебные центры, УЛМ, мореходная книжка — каждая инстанция требует личного визита. Записи за 2–3 недели вперёд, очереди, пересдачи. Вы буквально становитесь курьером собственных документов — вместо того чтобы уже зарабатывать в море.</p>
+            </div>
+            <div class="problem-card reveal reveal-d1">
+                <div class="problem-img photo-frame"><img src="assets/images/money-loss.webp" alt="Переплата" class="photo" loading="lazy" width="600" height="400" decoding="async"></div>
+                <h3>Переплата и очереди в учебных центрах</h3>
+                <p>Завышенные розничные цены, ненужные курсы, доплаты за «срочность». Плюс каждый учебный центр требует личного присутствия — берите отгулы, покупайте билеты, тратьте время на дорогу. А центров нужно обойти не один и не два.</p>
+            </div>
+            <div class="problem-card reveal reveal-d2">
+                <h3>Первый рейс — Владивосток</h3>
+                <p>Без опыта и связей большинство начинают с рыболовных судов на Дальнем Востоке. Перелёт 30 000–50 000 ₽ в одну сторону. И так каждый контракт — пока не получите повышение.</p>
+            </div>
+            <div class="problem-card reveal reveal-d3">
+                <h3>Застреваете на начальной позиции</h3>
+                <p>Без наставника и карьерного плана люди годами остаются на тяжёлой работе, летая во Владивосток. Не знают, что через 1–2 месяца ценза можно перейти на ближние порты, краболовы или международные суда.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section bg-dark" id="how">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Процесс</span>
+            <h2 class="title">Как это работает</h2>
+            <p class="subtitle">От заявки до выхода в рейс — 4 простых шага</p>
+        </div>
+        <div class="steps-grid reveal">
+            <div class="step"><div class="step-num">1</div><h3>Бесплатная консультация</h3><p>Оставляете заявку. Перезваниваем за 15 минут, отвечаем на все вопросы, составляем персональный план.</p><span class="step-time">15 минут</span></div>
+            <div class="step"><div class="step-num">2</div><h3>Договор и оплата</h3><p>Подписываем договор на консалтинговые услуги. Оплата поэтапная — не нужно платить всё сразу.</p><span class="step-time">1 день</span></div>
+            <div class="step"><div class="step-num">3</div><h3>Сопровождение в получении документов</h3><p>Берём на себя бюрократию: запись в учебные центры, бронь экзаменов, подготовка заявлений. Вы лично проходите медкомиссию и дактилоскопию. После основного пакета оформляем УЛМ и мореходную книжку. Готовые сертификаты — курьером.</p><span class="step-time">14 дней + 2 нед. на УЛМ/МК</span></div>
+            <div class="step"><div class="step-num">4</div><h3>Подбор контракта</h3><p>Организуем собеседования с 3–5 судовладельцами из нашей базы партнёров. Сопровождаем до подписания контракта.</p><span class="step-time">7–14 дней</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- НАБОР И СЕЗОННОСТЬ -->
+<section class="section section--sm bg-panel">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Набор</span>
+            <h2 class="title title--sm">Статус набора и сезонность</h2>
+            <p class="subtitle">Набираем клиентов ежемесячно. Краболовный флот — сезонный, важно не упустить окно.</p>
+        </div>
+        <div class="cohort-banner reveal">
+            <div class="cohort-card" id="cohortCurrent"></div>
+            <div class="cohort-card" id="cohortNext"></div>
+        </div>
+        <div class="season-box reveal" id="seasonBox"></div>
+    </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="section bg-navy">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Сравнение</span>
+            <h2 class="title">Самостоятельно vs с CrewPoint</h2>
+        </div>
+        <div class="comp-table reveal">
+            <div class="comp-row comp-row--head"><div class="comp-cell">Параметр</div><div class="comp-cell">Самостоятельно</div><div class="comp-cell">С CrewPoint</div></div>
+            <div class="comp-row"><div class="comp-cell"><strong>Сроки получения документов</strong></div><div class="comp-cell"><span class="icon-no">&#10005;</span> До 5 месяцев</div><div class="comp-cell"><span class="icon-yes">&#10003;</span> 14 дней + 2 нед. УЛМ/МК</div></div>
+            <div class="comp-row"><div class="comp-cell"><strong>Стоимость</strong></div><div class="comp-cell"><span class="icon-no">&#10005;</span> От 70 000 ₽</div><div class="comp-cell"><span class="icon-yes">&#10003;</span> От 55 000 ₽ (УЛМ/МК включены)</div></div>
+            <div class="comp-row"><div class="comp-cell"><strong>Первый рейс</strong></div><div class="comp-cell"><span class="icon-no">&#10005;</span> Владивосток (сами ищете)</div><div class="comp-cell"><span class="icon-yes">&#10003;</span> Подберём контракт, организуем собеседования</div></div>
+            <div class="comp-row"><div class="comp-cell"><strong>После повышения — порты</strong></div><div class="comp-cell"><span class="icon-no">&#10005;</span> Так и летаете во Владивосток</div><div class="comp-cell"><span class="icon-yes">&#10003;</span> СПб, Мурманск, Новороссийск, Калининград</div></div>
+            <div class="comp-row"><div class="comp-cell"><strong>Карьерное сопровождение</strong></div><div class="comp-cell"><span class="icon-no">&#10005;</span> Сами разбираетесь</div><div class="comp-cell"><span class="icon-yes">&#10003;</span> Три карьерных пути на выбор</div></div>
+            <div class="comp-row"><div class="comp-cell"><strong>Подбор контракта</strong></div><div class="comp-cell"><span class="icon-no">&#10005;</span> Ищете сами</div><div class="comp-cell"><span class="icon-yes">&#10003;</span> Собеседования с 3–5 компаниями</div></div>
+            <div class="comp-row"><div class="comp-cell"><strong>Юридические гарантии</strong></div><div class="comp-cell"><span class="icon-no">&#10005;</span> Нет</div><div class="comp-cell"><span class="icon-yes">&#10003;</span> Договор + возврат средств</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- CAREER MAP -->
+<section class="section bg-deepest" id="career">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Карьерная карта</span>
+            <h2 class="title">Один старт — <span class="accent">три пути роста</span></h2>
+            <p class="subtitle">Все начинают одинаково. А дальше — выбираете свой путь: комфорт, максимальный заработок или международную карьеру</p>
+        </div>
+        <div class="career-map reveal">
+            <div class="career-start">
+                <span class="branch-badge badge-blue">Этап 1 — Старт</span>
+                <h3>Матрос / первый рейс</h3>
+                <p>Документы (включая УЛМ и мореходную книжку) + первый контракт. Рыболовный флот, Владивосток. Набираете 1–2 месяца ценза.</p>
+                <div class="stage-stats">
+                    <div class="s-stat"><span class="s-val text-green">150 000 ₽</span><span class="s-lbl">Зарплата / мес</span></div>
+                    <div class="s-stat"><span class="s-val text-blue">~1 мес</span><span class="s-lbl">Все документы</span></div>
+                    <div class="s-stat"><span class="s-val text-gold">Владивосток</span><span class="s-lbl">Первый порт</span></div>
+                </div>
+            </div>
+            <div class="career-arrow-center"><span>&#8595;</span>После 1–2 месяцев ценза — выбираете свой путь</div>
+            <div class="career-branches">
+                <div class="branch branch--comfort">
+                    <span class="branch-badge badge-blue">Путь «Комфорт»</span>
+                    <div class="branch-img photo-frame"><img src="assets/images/bridge-officer.webp" alt="Вахтенный матрос на мостике" class="photo" loading="lazy" width="600" height="240" decoding="async"></div>
+                    <h3>Вахтенный матрос</h3>
+                    <p class="b-desc">Меньше физической работы, ближние порты, стабильный доход. Работа на мостике вместо палубы.</p>
+                    <div class="branch-stats">
+                        <div class="b-stat"><span class="v text-green">150–200K ₽</span><span class="l">Зарплата / мес</span></div>
+                        <div class="b-stat"><span class="v text-blue">4 порта</span><span class="l">Ближние города</span></div>
+                    </div>
+                    <ul class="branch-features">
+                        <li><span class="ck">&#10003;</span> Новороссийск, СПб, Мурманск, Калининград</li>
+                        <li><span class="ck">&#10003;</span> Перегрузчики и танкеры</li>
+                        <li><span class="ck">&#10003;</span> Лёгкая работа на мостике</li>
+                        <li><span class="ck">&#10003;</span> Экономия на перелётах до 100K ₽/год</li>
+                    </ul>
+                    <div class="branch-price">Повышение квалификации: <strong>120 000 ₽</strong></div>
+                    <a href="#path-comfort" class="btn btn--primary btn--full btn--sm">Подробнее</a>
+                </div>
+                <div class="branch branch--capital">
+                    <span class="branch-badge badge-orange">Путь «Капитал»</span>
+                    <div class="branch-img photo-frame"><img src="assets/images/crab-boat.webp" alt="Краболовное судно Камчатка" class="photo" loading="lazy" width="600" height="240" decoding="async"></div>
+                    <h3>Краболовный флот</h3>
+                    <p class="b-desc">Максимальный заработок в российском флоте. Камчатка, короткие путины, серьёзные деньги.</p>
+                    <div class="branch-stats">
+                        <div class="b-stat"><span class="v text-orange">300–500K ₽</span><span class="l">Зарплата / мес</span></div>
+                        <div class="b-stat"><span class="v text-orange">2–3 мес</span><span class="l">Путина</span></div>
+                    </div>
+                    <ul class="branch-features">
+                        <li><span class="ck">&#10003;</span> Петропавловск-Камчатский</li>
+                        <li><span class="ck">&#10003;</span> До 1 500 000 ₽ за путину</li>
+                        <li><span class="ck">&#10003;</span> Короткий контракт — заработал и свободен</li>
+                        <li><span class="ck">&#10003;</span> Премиум-сегмент флота</li>
+                    </ul>
+                    <div class="branch-price">Сопровождение: <strong>150 000 ₽</strong></div>
+                    <a href="#path-capital" class="btn btn--orange btn--full btn--sm">Подробнее</a>
+                </div>
+                <div class="branch branch--global">
+                    <span class="branch-badge badge-cyan">Путь «Global»</span>
+                    <div class="branch-img photo-frame"><img src="assets/images/international-vessel.webp" alt="Международное судно" class="photo" loading="lazy" width="600" height="240" decoding="async"></div>
+                    <h3>Международный флот</h3>
+                    <p class="b-desc">Работа под иностранным флагом. Зарплата в долларах, посадка за рубежом, совершенно другой уровень.</p>
+                    <div class="branch-stats">
+                        <div class="b-stat"><span class="v text-cyan">$2–5K</span><span class="l">Зарплата / мес</span></div>
+                        <div class="b-stat"><span class="v text-cyan">4 флага</span><span class="l">Направления</span></div>
+                    </div>
+                    <ul class="branch-features">
+                        <li><span class="ck">&#10003;</span> Норвегия, Панама, Маршалловы О-ва, Кипр</li>
+                        <li><span class="ck">&#10003;</span> Зарплата в валюте ($, €)</li>
+                        <li><span class="ck">&#10003;</span> Посадка в портах Европы и Азии</li>
+                        <li><span class="ck">&#10003;</span> Требуется: вахтенный матрос</li>
+                    </ul>
+                    <div class="branch-price">Стоимость: <strong>индивидуально</strong></div>
+                    <a href="#path-global" class="btn btn--cyan btn--full btn--sm">Узнать подробности</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PATH COMFORT -->
+<section class="section bg-dark" id="path-comfort">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Карьерный рост</span>
+            <h2 class="title">Вахтенный матрос — меньше нагрузки, больше возможностей</h2>
+            <p class="subtitle">После 1–2 месяцев ценза мы поможем вам перейти на совершенно другой уровень работы в море</p>
+        </div>
+        <div class="path-box path-box--blue reveal">
+            <div class="path-inner">
+                <div class="path-content">
+                    <h3>Почему вахтенный матрос — это переломный момент</h3>
+                    <p class="p-desc">Первый рейс — это рыболовные суда и Владивосток. Тяжёлый физический труд, дорогие перелёты, непростые условия. Вахтенный матрос — это совершенно другой уровень: работа на мостике вместо палубы, современные суда, и главное — порты посадки рядом с домом. Та же или выше зарплата, но жизнь кардинально меняется.</p>
+                    <ul class="path-benefits">
+                        <li><span class="bdot bdot-green"></span><div><strong>В разы меньше физической работы.</strong> Вы на мостике, а не с кисточкой на палубе. Наблюдение, навигация, связь — интеллектуальный труд.</div></li>
+                        <li><span class="bdot bdot-gold"></span><div><strong>Зарплата 150 000–200 000 ₽ и выше.</strong> На танкерах и перегрузчиках ставки выше, чем на сухогрузах. Плюс надбавки за условия работы.</div></li>
+                        <li><span class="bdot bdot-blue"></span><div><strong>Порты посадки рядом с домом.</strong> Новороссийск, Санкт-Петербург, Мурманск, Калининград — не нужно лететь во Владивосток за 40 000 ₽.</div></li>
+                        <li><span class="bdot bdot-purple"></span><div><strong>Лучшие суда.</strong> Перегрузчики и танкеры — это современные суда с хорошими условиями: каюты, питание, отдых.</div></li>
+                        <li><span class="bdot bdot-green"></span><div><strong>Экономия до 100 000 ₽ в год на билетах.</strong> Перелёт Москва → Владивосток: 30 000–50 000 ₽. Поезд до Новороссийска: 3 000–5 000 ₽. За 2 контракта экономия = целая зарплата.</div></li>
+                        <li><span class="bdot bdot-gold"></span><div><strong>Следующая ступень — боцман.</strong> Вахтенный матрос → старший матрос → боцман. Зарплата боцмана: 200 000–350 000 ₽. Мы поможем и с этим.</div></li>
+                    </ul>
+                </div>
+                <div class="path-sidebar">
+                    <div class="price-box"><p class="price-label">Стоимость повышения квалификации</p><div class="price-value">120 000 <span>₽</span></div><p class="price-note">документы + организация собеседований + сопровождение</p></div>
+                    <div class="roi-box"><p>Окупаемость: <strong>меньше 1 месяца работы в море</strong></p><p>Экономия на билетах за год: <strong>60 000–100 000 ₽</strong></p><p>Больше не нужно летать во Владивосток</p></div>
+                    <div class="inst-box"><p>Рассрочка: <strong>3 платежа по 40 000 ₽</strong></p><p>Первый платёж — при заключении договора</p></div>
+                    <a href="#form" class="btn btn--primary btn--full">Узнать подробнее &rarr;</a>
+                    <p class="geo-title">Порты после повышения</p>
+                    <div class="geo-grid">
+                        <div class="geo-card"><div class="geo-card-img photo-frame"><img src="assets/images/port-novorossiysk.webp" alt="Новороссийск" class="photo" loading="lazy" width="300" height="100" decoding="async"></div><h4>Новороссийск</h4><p>Чёрное море</p><span class="geo-tag">Близко</span></div>
+                        <div class="geo-card"><div class="geo-card-img photo-frame"><img src="assets/images/port-spb.webp" alt="Санкт-Петербург" class="photo" loading="lazy" width="300" height="100" decoding="async"></div><h4>Санкт-Петербург</h4><p>Балтика</p><span class="geo-tag">Близко</span></div>
+                        <div class="geo-card"><div class="geo-card-img photo-frame"><img src="assets/images/port-murmansk.webp" alt="Мурманск" class="photo" loading="lazy" width="300" height="100" decoding="async"></div><h4>Мурманск</h4><p>Баренцево море</p><span class="geo-tag">Близко</span></div>
+                        <div class="geo-card"><div class="geo-card-img photo-frame"><img src="assets/images/port-kaliningrad.webp" alt="Калининград" class="photo" loading="lazy" width="300" height="100" decoding="async"></div><h4>Калининград</h4><p>Балтика / Европа</p><span class="geo-tag">Близко</span></div>
+                    </div>
+                    <div class="geo-saving"><h4>Первый рейс — Владивосток. После повышения — рядом с домом</h4><p>Все начинают с Дальнего Востока. Но после 1–2 месяцев ценза и повышения до вахтенного — вы пересаживаетесь на ближние порты. Экономия 30 000–50 000 ₽ на каждом перелёте. За год — целая зарплата.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PATH CAPITAL -->
+<section class="section bg-navy" id="path-capital">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Максимальный заработок</span>
+            <h2 class="title">Краболовный флот Камчатки — <span class="accent">до 500 000 ₽ в месяц</span></h2>
+            <p class="subtitle">Самые высокооплачиваемые позиции в российском флоте. Короткие путины, серьёзные деньги.</p>
+        </div>
+        <div class="path-box path-box--orange reveal">
+            <div class="path-inner">
+                <div class="path-content">
+                    <h3>Краболовный флот — для тех, кто хочет максимум</h3>
+                    <p class="p-desc">Камчатка — это не для всех. Суровые условия, тяжёлая работа, холод. Но за 2–3 месяца путины вы зарабатываете столько, сколько обычный моряк за полгода. А между путинами — свободны. Это выбор для амбициозных людей, которые готовы пахать ради результата.</p>
+                    <ul class="path-benefits">
+                        <li><span class="bdot bdot-orange"></span><div><strong>Зарплата 300 000 – 500 000 ₽ в месяц.</strong> Самые высокие ставки в российском флоте. За одну путину — от 600 000 до 1 500 000 ₽.</div></li>
+                        <li><span class="bdot bdot-gold"></span><div><strong>Короткий контракт: 2–3 месяца.</strong> Путина — это сезон. Отработали — свободны. Можно совмещать с другой работой или отдыхать.</div></li>
+                        <li><span class="bdot bdot-orange"></span><div><strong>Петропавловск-Камчатский.</strong> Порт посадки — Камчатка. Добыча краба в Охотском и Беринговом морях.</div></li>
+                        <li><span class="bdot bdot-gold"></span><div><strong>Премиум-сегмент.</strong> Ограниченное количество мест, высокие требования. Не берут первоходов — нужен минимум 1 рейс (1–2 месяца ценза). Мы проведём вас через первый рейс.</div></li>
+                        <li><span class="bdot bdot-orange"></span><div><strong>Путь к максимальному доходу.</strong> Опытные крабловщики зарабатывают от 500 000 ₽ в месяц. Некоторые — значительно больше в зависимости от улова.</div></li>
+                    </ul>
+                </div>
+                <div class="path-sidebar">
+                    <div class="price-box"><p class="price-label">Стоимость сопровождения</p><div class="price-value">150 000 <span>₽</span></div><p class="price-note">документы + собеседования с крабодобывающими компаниями + сопровождение</p></div>
+                    <div class="roi-box"><p>Заработок за путину (2–3 мес): <strong>600 000 – 1 500 000 ₽</strong></p><p>Окупаемость: <strong>меньше 1 месяца в море</strong></p></div>
+                    <div class="inst-box"><p>Рассрочка: <strong>3 платежа по 50 000 ₽</strong></p><p>Первый платёж — при заключении договора</p></div>
+                    <a href="#form" class="btn btn--orange btn--full">Узнать подробнее &rarr;</a>
+                    <div class="geo-card geo-card--standalone"><div class="geo-card-img geo-card-img--tall photo-frame"><img src="assets/images/kamchatka-port.webp" alt="Петропавловск-Камчатский" class="photo" loading="lazy" width="300" height="160" decoding="async"></div><h4>Петропавловск-Камчатский</h4><p>Охотское и Берингово моря</p><span class="geo-tag geo-tag--orange">Краболовный флот</span></div>
+                    <div class="geo-saving geo-saving--orange"><h4>Важно: нужен ценз</h4><p>Крабодобывающие компании не берут людей без морского стажа. Вам нужен минимум один рейс (1–2 месяца). Мы проведём вас через первый рейс на рыболовном судне, а после организуем собеседования на краболовный флот.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PATH GLOBAL -->
+<section class="section bg-dark" id="path-global">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Международная карьера</span>
+            <h2 class="title">Международный флот — зарплата в валюте</h2>
+            <p class="subtitle">После повышения до вахтенного матроса открывается возможность работы на судах под иностранным флагом</p>
+        </div>
+        <div class="path-box path-box--cyan reveal">
+            <div class="path-inner">
+                <div class="path-content">
+                    <h3>Работа под иностранным флагом — совершенно другой уровень</h3>
+                    <p class="p-desc">Зарплата выплачивается в долларах или евро — от $2 000 до $5 000 в месяц в зависимости от флага, типа судна и должности. Посадка в портах разных стран. Это кратно выше российского уровня дохода. Для работы под флагом требуется квалификация вахтенного матроса и международные сертификаты. Мы помогаем с получением всех необходимых документов и организуем собеседования с международными судовладельцами.</p>
+                    <ul class="path-benefits">
+                        <li><span class="bdot bdot-cyan"></span><div><strong>Зарплата от $2 000 до $5 000 в месяц.</strong> В пересчёте — 180 000–500 000 ₽, при этом доход в валюте не зависит от курсовых скачков внутри России.</div></li>
+                        <li><span class="bdot bdot-cyan"></span><div><strong>Посадка в портах Европы и Азии.</strong> Турция, Греция, ОАЭ, Сингапур и другие — зависит от маршрута и компании.</div></li>
+                        <li><span class="bdot bdot-cyan"></span><div><strong>Современные суда международного класса.</strong> Высокие стандарты безопасности, комфорта и оплаты.</div></li>
+                        <li><span class="bdot bdot-cyan"></span><div><strong>Карьерный рост на международном уровне.</strong> Опыт на иностранных судах открывает двери к высшим позициям в мировом флоте.</div></li>
+                    </ul>
+                    <p class="geo-title geo-title--cyan">Направления и флаги</p>
+                    <div class="flag-grid">
+                        <div class="flag-card"><span class="flag-emoji">&#127475;&#127476;</span><h4>Норвегия</h4><p>Оффшор, нефтяные платформы. Одни из самых высоких зарплат в мире.</p></div>
+                        <div class="flag-card"><span class="flag-emoji">&#127477;&#127462;</span><h4>Панама</h4><p>Крупнейший судовой реестр мира. Танкеры, балкеры, контейнеровозы.</p></div>
+                        <div class="flag-card"><span class="flag-emoji">&#127474;&#127469;</span><h4>Маршалловы Острова</h4><p>Мировые контейнерные линии. Maersk, MSC, CMA CGM.</p></div>
+                        <div class="flag-card"><span class="flag-emoji">&#127464;&#127486;</span><h4>Кипр</h4><p>Крупнейший реестр Европы. Средиземноморские маршруты.</p></div>
+                    </div>
+                </div>
+                <div class="path-sidebar">
+                    <div class="price-box"><p class="price-label">Стоимость</p><div class="price-value price-value--sm">Индивидуально</div><p class="price-note">Зависит от флага, направления и вашего опыта</p></div>
+                    <div class="roi-box roi-box--cyan"><p>Зарплата: <strong>от $2 000 до $5 000/мес</strong></p><p>В пересчёте: <strong>180 000–500 000 ₽/мес</strong></p></div>
+                    <div class="inst-box inst-box--cyan"><p>Требование: <strong>квалификация вахтенного матроса</strong></p><p>Сначала — повышение, затем — международный флот</p></div>
+                    <a href="#form" class="btn btn--cyan btn--full">Узнать подробности &rarr;</a>
+                    <div class="geo-saving geo-saving--cyan geo-saving--top"><h4>Это индивидуальный путь</h4><p>Международный флот — это не типовой пакет. Условия зависят от вашего опыта, квалификации и пожеланий. На персональной консультации подберём оптимальный вариант и рассчитаем стоимость.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TRANSPARENCY -->
+<section class="section section--sm bg-panel">
+    <div class="container">
+        <div class="reveal text-center transparency-wrap">
+            <span class="label">Честная цена</span>
+            <h2 class="title title--sm">Полная стоимость — сразу. Без скрытых доплат.</h2>
+            <p class="transparency-desc">В нашей нише принято называть клиенту стоимость только за документы. А потом, когда документы готовы и деньги заплачены, озвучивать дополнительную сумму за посадку. Клиент ожидает 55 000 — а платит 120 000.</p>
+            <p class="transparency-desc transparency-desc--bold">Мы так не работаем. На нашем сайте указана полная стоимость от старта до выхода в рейс.</p>
+        </div>
+        <div class="reveal transparency-compare">
+            <div class="transparency-grid">
+                <div class="t-card t-card--bad">
+                    <div class="t-heading text-red">Как у других</div>
+                    <div class="t-rows">
+                        <div class="t-row t-row--line t-row--line-bad"><span class="t-text">Вам говорят</span><span class="t-value">55 000 ₽</span></div>
+                        <div class="t-row t-row--line t-row--line-bad"><span class="t-text text-red">Узнаёте потом</span><span class="t-value text-red">+ 65 000 ₽</span></div>
+                        <div class="t-row"><span class="t-total">Реально платите</span><span class="t-total-mono text-red">120 000 ₽</span></div>
+                    </div>
+                </div>
+                <div class="t-card t-card--good">
+                    <div class="t-heading text-green">Как у CrewPoint</div>
+                    <div class="t-rows">
+                        <div class="t-row t-row--line t-row--line-good"><span class="t-text">Вам говорят сразу</span><span class="t-value">120 000 ₽</span></div>
+                        <div class="t-row t-row--line t-row--line-good"><span class="t-text text-green">Скрытые доплаты</span><span class="t-value text-green">0 ₽</span></div>
+                        <div class="t-row"><span class="t-total">Реально платите</span><span class="t-total-mono text-green">120 000 ₽</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="transparency-advice reveal">
+                <p>Совет: если сравниваете нас с другими — спросите у них прямо: <strong>«Какова полная стоимость от оформления до выхода в рейс, включая посадку?»</strong> Ответ может вас удивить.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="section bg-navy" id="pricing">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Прозрачные цены</span>
+            <h2 class="title">Выберите свой пакет</h2>
+            <p class="subtitle">Никаких скрытых платежей. Всё, что указано — всё, что вы платите.</p>
+        </div>
+        <div class="pricing-tabs reveal">
+            <button class="pricing-tab active" onclick="switchPricing('newbie')">Первый раз в море</button>
+            <button class="pricing-tab" onclick="switchPricing('experienced')">Уже был в рейсе</button>
+        </div>
+
+        <!-- PANEL: Новички -->
+        <div class="pricing-panel active reveal" id="panelNewbie">
+            <div class="p-card">
+                <h3>Сопровождение (Документы)</h3>
+                <p class="p-desc">Полное сопровождение в получении морских документов</p>
+                <div class="p-amount">55 000 <span>₽</span></div>
+                <p class="p-note">единоразовая оплата</p>
+                <ul class="p-features">
+                    <li><span class="ck">&#10003;</span> Организация ускоренного прохождения</li>
+                    <li><span class="ck">&#10003;</span> Запись в учебные центры и бронь экзаменов</li>
+                    <li><span class="ck">&#10003;</span> Подготовка всех заявлений</li>
+                    <li><span class="ck">&#10003;</span> Оформление УЛМ и мореходной книжки</li>
+                    <li><span class="ck">&#10003;</span> Сертификаты курьером / почтой</li>
+                    <li><span class="ck">&#10003;</span> Официальный договор</li>
+                    <li><span class="no">&mdash;</span> <span class="faded">Подбор контракта и собеседования</span></li>
+                    <li><span class="no">&mdash;</span> <span class="faded">Повышение квалификации</span></li>
+                </ul>
+                <div class="p-inst"><p>Рассрочка: <strong>2 &times; 27 500 ₽</strong></p></div>
+                <a href="#form" class="btn btn--outline btn--full">Выбрать</a>
+            </div>
+            <div class="p-card p-card--popular">
+                <div class="card-badge card-badge--gold">Популярный</div>
+                <h3>Старт карьеры</h3>
+                <p class="p-desc">Документы + персональный подбор контракта и организация собеседований</p>
+                <div class="p-amount">120 000 <span>₽</span></div>
+                <p class="p-note">окупается в первый рейс</p>
+                <ul class="p-features">
+                    <li><span class="ck">&#10003;</span> Всё из пакета «Сопровождение»</li>
+                    <li><span class="ck">&#10003;</span> <strong>Подбор контракта под ваш профиль</strong></li>
+                    <li><span class="ck">&#10003;</span> <strong>Организация собеседований с 3–5 судовладельцами</strong></li>
+                    <li><span class="ck">&#10003;</span> <strong>Сопровождение до подписания контракта</strong></li>
+                    <li><span class="ck">&#10003;</span> Персональный менеджер</li>
+                    <li><span class="no">&mdash;</span> <span class="faded">Повышение квалификации</span></li>
+                </ul>
+                <div class="p-inst"><p>Рассрочка: <strong>3 &times; 40 000 ₽</strong></p></div>
+                <a href="#form" class="btn btn--gold btn--full">Выбрать</a>
+            </div>
+            <div class="p-card p-card--premium">
+                <div class="card-badge card-badge--purple">Полный путь</div>
+                <h3>Карьера PRO</h3>
+                <p class="p-desc">Старт + повышение до вахтенного матроса</p>
+                <div class="p-amount">240 000 <span>₽</span></div>
+                <p class="p-note">два этапа, полная карьера</p>
+                <ul class="p-features">
+                    <li><span class="ck">&#10003;</span> Всё из пакета «Старт карьеры»</li>
+                    <li><span class="ck">&#10003;</span> <strong>Повышение до вахтенного матроса</strong></li>
+                    <li><span class="ck">&#10003;</span> <strong>После повышения — ближние порты вместо Владивостока</strong></li>
+                    <li><span class="ck">&#10003;</span> <strong>Доступ к вакансиям на перегрузчиках и танкерах</strong></li>
+                    <li><span class="ck">&#10003;</span> <strong>Меньше физ. работы на новой позиции</strong></li>
+                    <li><span class="ck">&#10003;</span> <strong>Экономия на перелётах после повышения</strong></li>
+                    <li><span class="ck">&#10003;</span> <strong>Долгосрочное карьерное сопровождение</strong></li>
+                </ul>
+                <div class="p-req"><p>Этап повышения доступен после 1–2 мес ценза в первом рейсе</p></div>
+                <div class="p-inst"><p>Рассрочка: <strong>Поэтапная оплата: за документы &rarr; за первый контракт &rarr; за повышение</strong></p></div>
+                <a href="#form" class="btn btn--purple btn--full">Выбрать</a>
+            </div>
+        </div>
+
+        <!-- PANEL: Опытные -->
+        <div class="pricing-panel" id="panelExperienced">
+            <div class="p-card">
+                <h3>Продление документов</h3>
+                <p class="p-desc">Истекают сертификаты, УЛМ или мореходная книжка? Организуем продление без очередей.</p>
+                <div class="p-amount">от 30 000 <span>₽</span></div>
+                <p class="p-note">зависит от количества документов</p>
+                <ul class="p-features">
+                    <li><span class="ck">&#10003;</span> Аудит текущих документов</li>
+                    <li><span class="ck">&#10003;</span> Продление сертификатов STCW</li>
+                    <li><span class="ck">&#10003;</span> Продление УЛМ и мореходной книжки</li>
+                    <li><span class="ck">&#10003;</span> Запись на переаттестацию</li>
+                    <li><span class="ck">&#10003;</span> Обновление медкомиссии</li>
+                    <li><span class="ck">&#10003;</span> Без очередей и беготни</li>
+                    <li><span class="no">&mdash;</span> <span class="faded">Подбор контракта</span></li>
+                </ul>
+                <div class="p-inst"><p>Срок: <strong>7–14 дней</strong></p></div>
+                <a href="#form" class="btn btn--outline btn--full">Выбрать</a>
+            </div>
+            <div class="p-card p-card--popular">
+                <div class="card-badge card-badge--gold">Популярный</div>
+                <h3>Новый контракт</h3>
+                <p class="p-desc">Документы в порядке, но нужен новый судовладелец? Подберём и организуем собеседования.</p>
+                <div class="p-amount">45 000 <span>₽</span></div>
+                <p class="p-note">только подбор, документы уже есть</p>
+                <ul class="p-features">
+                    <li><span class="ck">&#10003;</span> Проверка комплектности документов</li>
+                    <li><span class="ck">&#10003;</span> <strong>Подбор контракта под ваш профиль и пожелания</strong></li>
+                    <li><span class="ck">&#10003;</span> <strong>Собеседования с 3–5 судовладельцами</strong></li>
+                    <li><span class="ck">&#10003;</span> <strong>Сопровождение до подписания контракта</strong></li>
+                    <li><span class="ck">&#10003;</span> Персональный менеджер</li>
+                    <li><span class="ck">&#10003;</span> Выбор порта и типа судна</li>
+                </ul>
+                <div class="p-inst"><p>Срок подбора: <strong>7–14 дней</strong></p></div>
+                <a href="#form" class="btn btn--gold btn--full">Выбрать</a>
+            </div>
+            <div class="p-card p-card--premium">
+                <div class="card-badge card-badge--purple">Максимум</div>
+                <h3>Полный апгрейд</h3>
+                <p class="p-desc">Давно не были в море? Обновим все документы и подберём новый контракт. Вернётесь быстро.</p>
+                <div class="p-amount">от 80 000 <span>₽</span></div>
+                <p class="p-note">продление + подбор контракта</p>
+                <ul class="p-features">
+                    <li><span class="ck">&#10003;</span> Аудит всех текущих документов</li>
+                    <li><span class="ck">&#10003;</span> <strong>Продление или переоформление всего что нужно</strong></li>
+                    <li><span class="ck">&#10003;</span> <strong>Подбор контракта под ваш профиль</strong></li>
+                    <li><span class="ck">&#10003;</span> <strong>Собеседования с 3–5 судовладельцами</strong></li>
+                    <li><span class="ck">&#10003;</span> <strong>Сопровождение до подписания контракта</strong></li>
+                    <li><span class="ck">&#10003;</span> Персональный менеджер</li>
+                </ul>
+                <div class="p-inst"><p>Рассрочка: <strong>2 платежа — 40 000 + 40 000 ₽</strong></p></div>
+                <a href="#form" class="btn btn--purple btn--full">Выбрать</a>
+            </div>
+        </div>
+
+        <p class="pricing-note reveal">Повышение до вахтенного матроса (120 000 ₽), краболовный флот Камчатки (130 000 ₽) и международный флот — доступны для всех моряков с цензом. Подробности на консультации.</p>
+    </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="section bg-dark" id="calc">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Калькулятор</span>
+            <h2 class="title">Посчитайте окупаемость</h2>
+            <p class="subtitle">Карьера в море — инвестиция с возвратом от 300%</p>
+        </div>
+        <div class="calc-box reveal">
+            <div class="calc-outer">
+                <div>
+                    <div class="calc-grid">
+                        <div>
+                            <div class="calc-group">
+                                <label>Выбранный путь</label>
+                                <div class="chip-group" id="chipPackage">
+                                    <button class="chip" data-value="55000" onclick="selectChip(this)">Документы<span class="chip-sub">55 000 ₽</span></button>
+                                    <button class="chip" data-value="120000" onclick="selectChip(this)">Старт карьеры<span class="chip-sub">120 000 ₽</span></button>
+                                    <button class="chip active" data-value="240000" onclick="selectChip(this)">Карьера PRO<span class="chip-sub">240 000 ₽</span></button>
+                                    <button class="chip" data-value="270000" onclick="selectChip(this)">Старт + краболов<span class="chip-sub">270 000 ₽</span></button>
+                                </div>
+                            </div>
+                            <div class="calc-group">
+                                <label>Зарплата в море</label>
+                                <div class="chip-group" id="chipSalary">
+                                    <button class="chip" data-value="100000" onclick="selectChip(this)">100K<span class="chip-sub">начало</span></button>
+                                    <button class="chip active" data-value="150000" onclick="selectChip(this)">150K<span class="chip-sub">среднее</span></button>
+                                    <button class="chip" data-value="200000" onclick="selectChip(this)">200K<span class="chip-sub">вахт. матрос</span></button>
+                                    <button class="chip" data-value="300000" onclick="selectChip(this)">300K<span class="chip-sub">краболов</span></button>
+                                    <button class="chip" data-value="500000" onclick="selectChip(this)">500K<span class="chip-sub">краб. макс</span></button>
+                                </div>
+                            </div>
+                            <div class="calc-group">
+                                <label>Контракт</label>
+                                <div class="chip-group" id="chipMonths">
+                                    <button class="chip" data-value="3" onclick="selectChip(this)">3 мес<span class="chip-sub">путина</span></button>
+                                    <button class="chip" data-value="4" onclick="selectChip(this)">4 мес</button>
+                                    <button class="chip active" data-value="6" onclick="selectChip(this)">6 мес</button>
+                                    <button class="chip" data-value="9" onclick="selectChip(this)">9 мес</button>
+                                </div>
+                            </div>
+                            <div class="calc-group" id="flightsGroup">
+                                <label>Экономия на перелётах</label>
+                                <div class="chip-group" id="chipFlights">
+                                    <button class="chip active" data-value="0" onclick="selectChip(this)">0 ₽<span class="chip-sub">Владивосток</span></button>
+                                    <button class="chip" data-value="30000" onclick="selectChip(this)">30K<span class="chip-sub">1 рейс/год</span></button>
+                                    <button class="chip" data-value="60000" onclick="selectChip(this)">60K<span class="chip-sub">2 рейса/год</span></button>
+                                    <button class="chip" data-value="100000" onclick="selectChip(this)">100K<span class="chip-sub">3 рейса/год</span></button>
+                                </div>
+                                <div class="flight-warning" id="flightWarning"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="calc-result">
+                                <div class="calc-item"><div class="calc-label">Ваши вложения</div><div class="calc-val" id="calcInvestment">240 000 ₽</div></div>
+                                <div class="calc-item"><div class="calc-label">Заработок за контракт</div><div class="calc-val calc-val--green" id="calcEarnings">900 000 ₽</div></div>
+                                <div class="calc-item" id="calcSavingsRow"><div class="calc-label">Экономия на перелётах</div><div class="calc-val calc-val--gold" id="calcSavings">0 ₽</div></div>
+                                <div class="calc-item calc-item--loss" id="calcLossRow" style="display:none"><div class="calc-label">Расходы на перелёты (в год)</div><div class="calc-val calc-val--red" id="calcLoss">-80 000 ₽</div></div>
+                                <div class="calc-item"><div class="calc-label">Чистая выгода</div><div class="calc-val calc-val--green" id="calcProfit">660 000 ₽</div></div>
+                            </div>
+                            <div id="calcNoResult" class="calc-no-result" style="display:none">
+                                <div class="calc-no-icon">&#9888;</div>
+                                <h4>Расчёт недоступен</h4>
+                                <p>Пакет «Документы» не включает подбор контракта и карьерное сопровождение. Вы получите документы, но искать работу придётся самостоятельно. Рассчитать окупаемость невозможно — результат зависит только от вас.</p>
+                                <p class="calc-no-cta" onclick="selectProPackage()">Выбрать «Старт карьеры» для гарантированного результата &rarr;</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="roi-gauge-sticky">
+                    <div class="roi-gauge">
+                        <div class="roi-gauge-value" id="roiGaugeValue">275%</div>
+                        <div class="roi-gauge-label">ROI</div>
+                        <div class="roi-gauge-track">
+                            <div class="roi-gauge-fill" id="roiGaugeFill" style="height:27.5%"></div>
+                            <div class="roi-gauge-marker" id="roiGaugeMarker" style="bottom:27.5%"><span class="roi-gauge-marker-value" id="roiMarkerText">275%</span></div>
+                            <div class="roi-gauge-tick" id="roiGaugeTick" style="bottom:27.5%"></div>
+                            <div class="roi-gauge-marks">
+                                <div class="roi-gauge-mark"><span class="roi-gauge-mark-label">1000%</span></div>
+                                <div class="roi-gauge-mark"><span class="roi-gauge-mark-label">700%</span></div>
+                                <div class="roi-gauge-mark"><span class="roi-gauge-mark-label">500%</span></div>
+                                <div class="roi-gauge-mark"><span class="roi-gauge-mark-label">300%</span></div>
+                                <div class="roi-gauge-mark"><span class="roi-gauge-mark-label">100%</span></div>
+                                <div class="roi-gauge-mark"><span class="roi-gauge-mark-label">0%</span></div>
+                            </div>
+                        </div>
+                        <div class="roi-gauge-caption">Возврат инвестиций</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ANTI-FRAUD -->
+<section class="section bg-navy" id="trust">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Важно</span>
+            <h2 class="title">Боитесь, что это мошенники?<br>Правильно делаете.</h2>
+            <p class="anti-fraud-subtitle">В интернете полно мошенников. Мы это знаем. Поэтому сделали всё, чтобы вы могли нас проверить <strong>до того, как заплатите хоть рубль</strong>.</p>
+        </div>
+        <div class="guarantee-grid reveal">
+            <div class="g-item"><div class="g-check">&#10003;</div><div><h4>Официальное ИП</h4><p>ИНН и ОГРНИП в открытом доступе. Проверьте на nalog.ru прямо сейчас.</p></div></div>
+            <div class="g-item"><div class="g-check">&#10003;</div><div><h4>Договор до оплаты</h4><p>Высылаем договор на консалтинговые услуги заранее. Покажите юристу, изучите каждый пункт.</p></div></div>
+            <div class="g-item"><div class="g-check">&#10003;</div><div><h4>Поэтапная оплата</h4><p>Не просим 100% предоплату. Платите частями по мере получения результата на каждом этапе.</p></div></div>
+            <div class="g-item"><div class="g-check">&#10003;</div><div><h4>Документы в госреестре</h4><p>Все сертификаты проверяемы в официальных государственных реестрах. Покажем, как проверить самостоятельно.</p></div></div>
+            <div class="g-item"><div class="g-check">&#10003;</div><div><h4>500+ моряков прошли через нас</h4><p>Реальные видеоотзывы с бортов судов. Реальные люди, которые работают в море прямо сейчас.</p></div></div>
+            <div class="g-item"><div class="g-check">&#10003;</div><div><h4>Возврат средств</h4><p>Если по нашей вине документы окажутся непригодными — полный возврат оплаты. Прописано в договоре.</p></div></div>
+            <div class="g-item"><div class="g-check">&#10003;</div><div><h4>Полная стоимость на сайте</h4><p>Никаких скрытых доплат. Сумма которую вы видите — сумма которую вы платите. Без «а ещё нужно доплатить за посадку» после оплаты.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section bg-dark" id="reviews">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Отзывы</span>
+            <h2 class="title">Что говорят наши моряки</h2>
+        </div>
+        <div class="reviews-grid reveal">
+            <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">«Ребята взяли на себя всю бюрократию — записали в учебный центр, помогли с заявлениями, оформили УЛМ и мореходную книжку. Я только прошёл медкомиссию и дактилоскопию лично. Через месяц всё было готово, организовали собеседование, и я подписал контракт. Да, первый рейс — Владивосток, но зато теперь получаю повышение до вахтенного.»</p><div class="review-author"><div class="review-avatar review-avatar--blue">АС</div><div><div class="review-name">Алексей С.</div><div class="review-role">Матрос, г. Владивосток</div></div></div></div>
+            <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">«Сначала помогли с документами и подобрали первый контракт. После 2 месяцев ценза — организовали повышение до вахтенного. Теперь прохожу собеседования на танкеры через них же, порт посадки — Новороссийск. Это небо и земля по сравнению с началом.»</p><div class="review-author"><div class="review-avatar review-avatar--purple">ДМ</div><div><div class="review-name">Дмитрий М.</div><div class="review-role">Вахтенный матрос, г. Новороссийск</div><span class="review-badge rb-purple">Прошёл повышение</span></div></div></div>
+            <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">«После первого рейса во Владивостоке решил идти на краболовы. CrewPoint организовали собеседование с крабодобывающей компанией на Камчатке. Первая путина — 3 месяца, заработал больше, чем за полгода обычной работы. Тяжело, но деньги того стоят.»</p><div class="review-author"><div class="review-avatar review-avatar--orange">СВ</div><div><div class="review-name">Сергей В.</div><div class="review-role">Краболов, Камчатка</div><span class="review-badge rb-orange">Краболовный флот</span></div></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section bg-navy" id="faq">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Вопросы</span>
+            <h2 class="title">Частые вопросы</h2>
+        </div>
+        <div class="faq-list reveal">
+            <div class="faq-item active"><button class="faq-q" onclick="toggleFaq(this)">Это легально? Документы настоящие?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Да, полностью легально. Мы не продаём документы — мы выступаем как ваше личное агентство: организуем экспресс-обучение в аккредитованных учебных центрах, помогаем пройти все инстанции без очередей и правильно заполняем заявления, экономя вам до 5 месяцев жизни. Вы лично проходите медкомиссию и дактилоскопию — это обязательные процедуры. После основного пакета документов мы также организуем получение УЛМ и мореходной книжки (ещё ~2 недели). Каждый сертификат регистрируется в государственных реестрах, и вы можете проверить подлинность самостоятельно.</div></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Почему через вас дешевле, чем напрямую в учебных центрах?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Мы направляем в учебные центры большой поток клиентов ежемесячно и работаем на партнёрских условиях. Центр, принимая одного человека «с улицы», выставляет полную розничную стоимость. Мы обеспечиваем им стабильный поток — отсюда оптовые условия, которые транслируем вам.</div></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Вы даёте 100% гарантию, что я уйду в рейс?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">По закону окончательное решение о найме принимает судовладелец. Наша гарантия в другом: мы не бросаем вас после получения документов. Мы организуем собеседования с проверенными компаниями-партнёрами и предлагаем вакансии до тех пор, пока вы не подпишете контракт. Мы работаем на ваш результат — именно поэтому 78% наших клиентов выбирают пакет с карьерным сопровождением.</div></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Какой карьерный путь выбрать?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Зависит от ваших приоритетов. Если важен комфорт, близость к дому и стабильность — выбирайте повышение до вахтенного матроса: ближние порты, лёгкая работа, 150–200K в месяц. Если хотите максимальный заработок и готовы к тяжёлой работе — краболовный флот Камчатки: 300 000+ ₽ в месяц, но суровые условия и короткие путины. Если мечтаете о международной карьере с зарплатой в валюте — путь через вахтенного матроса на суда под иностранным флагом. Многие наши клиенты комбинируют: сначала вахтенный для стабильности, потом краболов на сезон для заработка. На консультации подберём оптимальный план.</div></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Можно ли сразу пойти на краболовы?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">К сожалению, нет. Крабодобывающие компании не берут людей без морского стажа — это требование безопасности. Вам нужен минимум один рейс (1–2 месяца ценза). Мы проведём вас через первый рейс на рыболовном судне, а после набора ценза организуем собеседования с крабодобывающими компаниями Камчатки. Многие наши клиенты проходят этот путь за 3–4 месяца от нуля до краболова.</div></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Что значит «работа под флагом»?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Это работа на судах, зарегистрированных под флагом иностранного государства — Норвегии, Панамы, Маршалловых Островов, Кипра и других. Зарплата выплачивается в валюте (доллары или евро) и составляет от $2 000 до $5 000 в месяц в зависимости от флага, типа судна и должности. Посадка — в портах разных стран. Для работы под флагом требуется квалификация вахтенного матроса и международные сертификаты. Мы помогаем с получением всех необходимых документов и организуем собеседования с международными судовладельцами.</div></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Первый рейс — обязательно Владивосток? А когда ближние порты?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Да, большинство начинают с рыболовных судов на Дальнем Востоке — это стандартный вход в профессию. Но уже после 1–2 месяцев ценза вы можете пройти повышение до вахтенного матроса, и тогда открываются вакансии на перегрузчиках и танкерах с посадкой в Новороссийске, Санкт-Петербурге, Мурманске и Калининграде. Перелёт Москва → Владивосток стоит 30 000–50 000 ₽. Поезд до Новороссийска — 3 000 ₽. За 2 года экономия на одних билетах может составить стоимость автомобиля. Именно поэтому повышение квалификации — лучшая инвестиция после первого рейса.</div></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Нужно ли платить всё сразу?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Нет. Мы работаем с поэтапной оплатой. Для пакета «Карьера PRO»: первый платёж при заключении договора, второй — при получении документов, третий — при организации собеседований на новом уровне. Вы платите по мере получения конкретного результата на каждом этапе.</div></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">А если документы не примут? Есть гарантия?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">В договоре прописана ответственность за качество наших консалтинговых услуг. Если по нашей вине документы окажутся непригодными — возвращаем 100% оплаты. За 500+ моряков, прошедших через нас, таких случаев не было ни разу — все сертификаты получены через аккредитованные учебные центры и зарегистрированы в госреестрах.</div></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Что именно я должен сделать лично?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Мы берём на себя максимум бюрократии: запись в учебные центры, бронирование времени, подготовку заявлений, координацию между инстанциями. Но есть процедуры, которые по закону требуют личного присутствия: прохождение медицинской комиссии и сдача биометрических данных (дактилоскопия). Мы организуем запись и подскажем, что нужно — вам останется только прийти в назначенное время.</div></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Почему вы показываете полную стоимость, а другие — нет?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">В нашей нише распространена практика озвучивать только стоимость документов (55 000 ₽), а стоимость посадки (60 000–70 000 ₽) сообщать уже после оплаты первого этапа. Клиент думает что платит 55 000, а по факту платит 120 000. Формально это не обман — но и полной картины вам заранее не дают. Мы принципиально работаем иначе: на сайте, в договоре и на консультации вы сразу видите полную стоимость каждого пакета. Если сравниваете нас с другими компаниями — задайте им один вопрос: «Какова полная стоимость от оформления до выхода в рейс, включая посадку?» Ответ может отличаться от того что вам назвали изначально.</div></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- REFERRAL -->
+<section class="section bg-dark">
+    <div class="container">
+        <div class="referral-box reveal">
+            <div><h3>Приведи друга — получи 10 000 ₽</h3><p>Порекомендуйте нас знакомому. Когда он заключит договор на сопровождение — вы получите 10 000 ₽ на карту. 3 друга = 30 000 ₽.</p></div>
+            <div class="ref-amount"><div class="val">10 000 ₽</div><div class="lbl">за каждого друга</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA / FORM -->
+<section class="section cta bg-navy" id="form">
+    <div class="cta-video-bg">
+        <video autoplay loop muted playsinline preload="none">
+            <source src="assets/video/sunset-ship.webm" type="video/webm">
+            <source src="assets/video/sunset-ship.webm.mp4" type="video/mp4">
+        </video>
+        <div class="cta-video-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="reveal reveal-d2 text-center">
+            <span class="label">Начните сейчас</span>
+            <h2 class="title">Оставьте заявку — перезвоним за 15 минут</h2>
+            <p class="cta-subtitle">Бесплатная консультация. Расскажем про процесс, ответим на вопросы, посчитаем стоимость. Без давления.</p>
+        </div>
+        <div class="cta-form reveal reveal-d5" id="ctaForm">
+            <div class="form-group"><input type="text" id="formName" placeholder="Ваше имя" required></div>
+            <div class="form-group"><input type="tel" id="formPhone" placeholder="Телефон" required></div>
+            <div class="form-group">
+                <select id="formPackage">
+                    <option value="" disabled selected>Какой пакет интересует?</option>
+                    <option value="docs">Сопровождение (Документы) — 55 000 ₽</option>
+                    <option value="start">Старт карьеры — 120 000 ₽</option>
+                    <option value="pro">Карьера PRO — 240 000 ₽</option>
+                    <option value="upgrade">Повышение до вахтенного матроса — 120 000 ₽</option>
+                    <option value="crab">Краболовный флот — Камчатка — 150 000 ₽</option>
+                    <option value="global">Международный флот (под флагом)</option>
+                    <option value="unsure">Пока не определился</option>
+                </select>
+            </div>
+            <div class="form-group"><input type="text" id="formCity" placeholder="Ваш город"></div>
+            <button type="button" class="btn btn--gold btn--lg form-submit" onclick="submitForm()">Получить консультацию &rarr;</button>
+            <p class="form-note">Ваши данные защищены. Перезвоним в течение 15 минут в рабочее время.</p>
+        </div>
+        <div class="form-success" id="formSuccess"><div class="s-icon">&#10003;</div><h3>Заявка отправлена!</h3><p>Мы перезвоним вам в течение 15 минут.</p></div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <img src="assets/images/logo-anchor.png" alt="CrewPoint" class="logo-icon" width="40" height="40">
+                    <img src="assets/images/logo-text.png" alt="CrewPoint" class="logo-name" height="20">
+                </a>
+                <p>Кадровая платформа для морских специалистов. Документы, контракты, карьерный рост. Три пути развития: вахтенный матрос, краболовный флот, международные суда. 500+ моряков прошли через нас.</p>
+            </div>
+            <div><h4>Навигация</h4><ul><li><a href="#how">Как это работает</a></li><li><a href="#career">Карьерная карта</a></li><li><a href="#pricing">Стоимость</a></li><li><a href="#trust">Гарантии</a></li><li><a href="#faq">Вопросы</a></li></ul></div>
+            <div><h4>Карьерные пути</h4><ul><li><a href="#path-comfort">Вахтенный матрос</a></li><li><a href="#path-capital">Краболовный флот</a></li><li><a href="#path-global">Международный флот</a></li><li><a href="#calc">Калькулятор</a></li></ul></div>
+            <div><h4>Контакты</h4><ul><li><a href="tel:+79952337540">+7 (995) 233-75-40</a></li><li><a href="mailto:crewpoint_job@mail.ru">crewpoint_job@mail.ru</a></li><li><a href="#">Telegram</a></li><li><a href="#">WhatsApp</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><div>&copy; 2024–2025 CrewPoint. ИП Иванов И.И. ИНН: 000000000000. Консалтинговые услуги.</div><div class="footer-legal"><a href="#">Политика конфиденциальности</a><a href="#">Договор оферты</a></div></div>
+    </div>
+</footer>
+
+<!-- FLOATING ELEMENTS -->
+<div class="float-cta" id="floatingCta"><a href="#form" class="btn btn--gold btn--sm">Оставить заявку</a></div>
+
+<div class="contact-trigger" id="contactTrigger">
+    <button class="contact-trigger-btn" onclick="openSheet()">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Связаться
+        <span class="contact-trigger-dot"></span>
+    </button>
+</div>
+
+<!-- CONTACT BOTTOM SHEET -->
+<div class="sheet-overlay" id="sheetOverlay" onclick="closeSheet()"></div>
+<div class="sheet" id="sheet" role="dialog" aria-hidden="true">
+    <div class="sheet-inner">
+        <div class="sheet-handle" id="sheetHandle"><div class="sheet-handle-bar"></div></div>
+        <div class="sheet-status"><span class="sheet-status-text"><span class="sheet-status-dot"></span>Доступны сейчас</span></div>
+        <div class="sheet-messengers">
+            <a href="https://wa.me/79952337540?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BA%D0%B0%D1%80%D1%8C%D0%B5%D1%80%D0%B0%20%D0%B2%20%D0%BC%D0%BE%D1%80%D0%B5." target="_blank" class="sheet-msg-card">
+                <div class="sheet-msg-icon sheet-msg-icon--wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+                <div><div class="sheet-msg-name">WhatsApp</div><div class="sheet-msg-sub">Ответим за 5 минут</div></div>
+            </a>
+            <a href="https://t.me/crewpoint" target="_blank" class="sheet-msg-card">
+                <div class="sheet-msg-icon sheet-msg-icon--tg"><svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></div>
+                <div><div class="sheet-msg-name">Telegram</div><div class="sheet-msg-sub">Удобно и быстро</div></div>
+            </a>
+            <a href="https://max.ru/u/f9LHodD0cOJeIKX2m40lFniNncHoe2YnM5X0vp9SjCywQC83svNUXjvTlmYt" target="_blank" class="sheet-msg-card">
+                <div class="sheet-msg-icon sheet-msg-icon--max"><img src="https://maxicons.ru/icons/Max_logo.svg" alt="Max" width="22" height="22"></div>
+                <div><div class="sheet-msg-name">Max</div><div class="sheet-msg-sub">Российский мессенджер</div></div>
+            </a>
+        </div>
+        <div class="sheet-util">
+            <button class="sheet-util-btn sheet-util-phone" onclick="copyToClipboard('+79952337540','Телефон скопирован')" title="Скопировать телефон">
+                <div class="sheet-util-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+            </button>
+            <button class="sheet-util-btn sheet-util-email" onclick="copyToClipboard('crewpoint_job@mail.ru','Почта скопирована')">
+                <div class="sheet-util-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg></div>
+                <div class="sheet-util-text"><div class="sheet-util-label">Почта агентства</div><div class="sheet-util-value">crewpoint_job@mail.ru</div></div>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="sheet-toast" id="sheetToast"></div>
+
+<!-- EXIT INTENT POPUP -->
+<div class="exit-overlay" id="exitOverlay">
+    <div class="exit-popup">
+        <button class="exit-close" onclick="closeExitPopup()">&#x2715;</button>
+        <h3>Подождите!</h3>
+        <p class="exit-sub">Каждый месяц без решения — это потерянные</p>
+        <div class="exit-highlight">150 000 ₽</div>
+        <p class="exit-sub">Оставьте номер — перезвоним и ответим на все вопросы за 5 минут. Без обязательств.</p>
+        <div id="exitFormWrap">
+            <div class="exit-form">
+                <input type="tel" id="exitPhone" placeholder="+7 (___) ___-__-__">
+                <button class="btn btn--gold" onclick="submitExitForm()">Перезвоните</button>
+            </div>
+            <p class="exit-or">или напишите в <a href="https://t.me/crewpoint" target="_blank">Telegram</a></p>
+        </div>
+        <div class="exit-success" id="exitSuccess"><p>&#10003; Принято! Перезвоним в течение 15 минут.</p></div>
+    </div>
+</div>
+
+<script>
+// ══════════════════════════════════════
+// CREWPOINT — JS (Final Optimized)
+// ══════════════════════════════════════
+
+// --- Helpers ---
+var $ = function(sel, ctx) { return (ctx || document).querySelector(sel); };
+var $$ = function(sel, ctx) { return (ctx || document).querySelectorAll(sel); };
+var getChipValue = function(id) {
+    var a = $('#' + id + ' .chip.active');
+    return a ? parseInt(a.dataset.value) : 0;
+};
+var formatRub = function(n) { return n.toLocaleString('ru-RU') + ' ₽'; };
+
+// --- Constants ---
+var MONTHS_NOM = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
+var MONTHS_GEN = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+
+// --- Cached elements ---
+var header = $('#header');
+var floatingCta = $('#floatingCta');
+var contactTrigger = $('#contactTrigger');
+var mobileMenu = $('#mobileMenu');
+var sheet = $('#sheet');
+var sheetOverlay = $('#sheetOverlay');
+var exitOverlay = $('#exitOverlay');
+
+// --- State ---
+var lastScroll = 0;
+var scrollUpCount = 0;
+var exitShown = false;
+var ticking = false;
+
+// ══════════════════════════════════════
+// SCROLL — throttled with rAF
+// ══════════════════════════════════════
+window.addEventListener('scroll', function() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function() {
+        var y = window.scrollY;
+        if (header) header.classList.toggle('scrolled', y > 80);
+        if (floatingCta) floatingCta.classList.toggle('visible', y > 600);
+        if (contactTrigger) contactTrigger.classList.toggle('visible', y > 400);
+
+        // Exit intent on mobile (rapid scroll up)
+        if (!exitShown && exitOverlay) {
+            if (y < lastScroll && y > 300) {
+                scrollUpCount++;
+                if (scrollUpCount > 15) showExitPopup();
+            } else {
+                scrollUpCount = 0;
+            }
+            lastScroll = y;
+        }
+        ticking = false;
+    });
+});
+
+// ══════════════════════════════════════
+// MOBILE MENU
+// ══════════════════════════════════════
+function toggleMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.classList.toggle('active');
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+}
+
+// ══════════════════════════════════════
+// FAQ
+// ══════════════════════════════════════
+function toggleFaq(btn) {
+    var item = btn.parentElement;
+    var wasActive = item.classList.contains('active');
+    $$('.faq-item').forEach(function(el) { el.classList.remove('active'); });
+    if (!wasActive) item.classList.add('active');
+}
+
+// ══════════════════════════════════════
+// PRICING TABS
+// ══════════════════════════════════════
+function switchPricing(tab) {
+    $$('.pricing-tab').forEach(function(t) { t.classList.remove('active'); });
+    $$('.pricing-panel').forEach(function(p) { p.classList.remove('active'); });
+    var isNewbie = tab === 'newbie';
+    $$('.pricing-tab')[isNewbie ? 0 : 1].classList.add('active');
+    $('#panel' + (isNewbie ? 'Newbie' : 'Experienced')).classList.add('active');
+}
+
+// ══════════════════════════════════════
+// CALCULATOR
+// ══════════════════════════════════════
+function selectChip(btn) {
+    $$('.chip', btn.parentElement).forEach(function(c) { c.classList.remove('active'); });
+    btn.classList.add('active');
+    if (btn.parentElement.id === 'chipPackage') {
+        updateSalaryAccess();
+        updateMonthsAccess();
+        updateFlightAccess();
+    }
+    calculateFromChips();
+}
+
+// Lock unavailable chips — returns true if active was reset
+function lockChips(groupId, allowed) {
+    var group = $('#' + groupId);
+    if (!group) return false;
+    var activeChip = $('.chip.active', group);
+    var activeVal = activeChip ? parseInt(activeChip.dataset.value) : 0;
+    var needReset = false;
+
+    $$('.chip', group).forEach(function(c) {
+        var val = parseInt(c.dataset.value);
+        if (!allowed.length || allowed.indexOf(val) === -1) {
+            c.classList.add('locked-chip');
+            if (val === activeVal) { needReset = true; c.classList.remove('active'); }
+        } else {
+            c.classList.remove('locked-chip');
+        }
+    });
+    return needReset;
+}
+
+function updateSalaryAccess() {
+    var pkg = getChipValue('chipPackage');
+    var map = { 55000: [], 120000: [100000, 150000], 240000: [100000, 150000, 200000], 270000: [100000, 150000, 300000, 500000] };
+    var allowed = map[pkg] || [100000, 150000];
+    if (lockChips('chipSalary', allowed) && allowed.length) {
+        var fb = $('#chipSalary [data-value="150000"]');
+        if (fb) fb.classList.add('active');
+    }
+}
+
+function updateMonthsAccess() {
+    var pkg = getChipValue('chipPackage');
+    var map = { 55000: [], 270000: [3, 4, 6] };
+    var allowed = map[pkg] || [3, 4, 6, 9];
+    if (lockChips('chipMonths', allowed) && allowed.length) {
+        var fb = $('#chipMonths [data-value="6"]');
+        if (fb) fb.classList.add('active');
+    }
+}
+
+function updateFlightAccess() {
+    var flightGroup = $('#chipFlights');
+    var warning = $('#flightWarning');
+    if (!flightGroup || !warning) return;
+
+    var pkg = getChipValue('chipPackage');
+
+    if (pkg === 240000) {
+        flightGroup.classList.remove('locked');
+        warning.classList.remove('show');
+        warning.innerHTML = '';
+        return;
+    }
+
+    flightGroup.classList.add('locked');
+    $$('.chip', flightGroup).forEach(function(c) { c.classList.remove('active'); });
+    var zero = $('[data-value="0"]', flightGroup);
+    if (zero) zero.classList.add('active');
+
+    if (pkg === 55000) {
+        warning.classList.remove('show');
+        warning.innerHTML = '';
+    } else {
+        var isCrab = pkg === 270000;
+        var flightCost = isCrab ? '-60 000' : '-80 000';
+        var reason = isCrab ? 'перелёт Камчатка' : 'перелёт Владивосток';
+        warning.classList.add('show');
+        warning.innerHTML = '<p>Без повышения квалификации вы тратите <span class="warn-highlight">' + flightCost + ' \u20BD/год</span> на ' + reason + '. Это расходы которые другие компании вам не озвучат заранее. <span class="warn-cta" onclick="selectProPackage()">Выбрать Карьера PRO и забыть про Владивосток \u2192</span></p>';
+    }
+}
+
+function selectProPackage() {
+    var chip = $('#chipPackage [data-value="120000"]');
+    if (chip) selectChip(chip);
+}
+
+function calculateFromChips() {
+    var pkg = getChipValue('chipPackage');
+    var resultEl = $('.calc-result');
+    var noCalcMsg = $('#calcNoResult');
+
+    if (pkg === 55000) {
+        if (resultEl) resultEl.style.display = 'none';
+        if (noCalcMsg) noCalcMsg.style.display = 'block';
+        return;
+    }
+    if (resultEl) resultEl.style.display = '';
+    if (noCalcMsg) noCalcMsg.style.display = 'none';
+
+    var salary = getChipValue('chipSalary');
+    var months = getChipValue('chipMonths');
+    var flights = getChipValue('chipFlights');
+    var hasEconomy = pkg === 240000;
+    var flightLoss = 0;
+
+    if (!hasEconomy) {
+        flightLoss = pkg === 270000 ? 60000 : 80000;
+        flights = 0;
+    }
+
+    var earnings = salary * months;
+    var profit = earnings - pkg + flights - flightLoss;
+    var roi = pkg > 0 ? Math.round((profit / pkg) * 100) : 0;
+
+    // Update values
+    var setVal = function(id, text) { var el = $('#' + id); if (el) el.textContent = text; };
+    setVal('calcInvestment', formatRub(pkg));
+    setVal('calcEarnings', formatRub(earnings));
+    setVal('calcProfit', formatRub(profit));
+
+    var savingsRow = $('#calcSavingsRow');
+    var lossRow = $('#calcLossRow');
+
+    if (hasEconomy) {
+        if (savingsRow) savingsRow.style.display = '';
+        setVal('calcSavings', formatRub(flights));
+        if (lossRow) lossRow.style.display = 'none';
+    } else {
+        if (savingsRow) savingsRow.style.display = 'none';
+        if (lossRow) {
+            lossRow.style.display = '';
+            setVal('calcLoss', '-' + flightLoss.toLocaleString('ru-RU') + ' \u20BD/год');
+        }
+    }
+
+    updateRoiGauge(roi);
+}
+
+// ══════════════════════════════════════
+// ROI GAUGE
+// ══════════════════════════════════════
+function updateRoiGauge(percent) {
+    var clamped = Math.min(Math.max(percent, 0), 1000);
+    var ratio = (clamped / 1000) * 100;
+
+    var setVal = function(id, text) { var el = $('#' + id); if (el) el.textContent = text; };
+    setVal('roiGaugeValue', percent + '%');
+    setVal('roiMarkerText', percent + '%');
+
+    setTimeout(function() {
+        var fill = $('#roiGaugeFill');
+        var marker = $('#roiGaugeMarker');
+        var tick = $('#roiGaugeTick');
+        if (fill) fill.style.height = ratio + '%';
+        if (marker) marker.style.bottom = ratio + '%';
+        if (tick) tick.style.bottom = ratio + '%';
+    }, 50);
+}
+
+// ══════════════════════════════════════
+// FORMS
+// ══════════════════════════════════════
+function submitForm() {
+    var name = $('#formName');
+    var phone = $('#formPhone');
+    if (!name.value.trim()) { name.style.borderColor = 'var(--red)'; name.focus(); return; }
+    if (!phone.value.trim() || phone.value.length < 7) { phone.style.borderColor = 'var(--red)'; phone.focus(); return; }
+    $('#ctaForm').style.display = 'none';
+    $('#formSuccess').classList.add('show');
+}
+
+$$('.cta-form input').forEach(function(input) {
+    input.addEventListener('focus', function() { input.style.borderColor = 'var(--border-subtle)'; });
+});
+
+function applyPhoneMask(el) {
+    if (!el) return;
+    el.addEventListener('input', function(e) {
+        var v = e.target.value.replace(/\D/g, '');
+        if (!v.length || (v[0] !== '7' && v[0] !== '8')) return;
+        var f = '+7';
+        if (v.length > 1) f += ' (' + v.substring(1, 4);
+        if (v.length > 4) f += ') ' + v.substring(4, 7);
+        if (v.length > 7) f += '-' + v.substring(7, 9);
+        if (v.length > 9) f += '-' + v.substring(9, 11);
+        e.target.value = f;
+    });
+}
+
+applyPhoneMask($('#formPhone'));
+applyPhoneMask($('#exitPhone'));
+
+// ══════════════════════════════════════
+// SCROLL REVEAL
+// ══════════════════════════════════════
+function initReveal() {
+    var els = $$('.reveal');
+    if (!('IntersectionObserver' in window)) {
+        els.forEach(function(e) { e.classList.add('visible'); });
+        return;
+    }
+
+    var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(en) {
+            if (en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); }
+        });
+    }, { threshold: 0.01 });
+
+    els.forEach(function(e) { obs.observe(e); });
+
+    // Fallback: show all after 4s
+    setTimeout(function() {
+        els.forEach(function(e) { if (!e.classList.contains('visible')) e.classList.add('visible'); });
+    }, 4000);
+}
+
+// ══════════════════════════════════════
+// COHORTS — honest phases, no fake numbers
+// ══════════════════════════════════════
+function renderCohorts() {
+    var curEl = document.getElementById('cohortCurrent');
+    var nextEl = document.getElementById('cohortNext');
+    if (!curEl || !nextEl) return;
+
+    var now = new Date();
+    var m = now.getMonth();
+    var y = now.getFullYear();
+    var dom = now.getDate();
+
+    var phase, phaseLabel, phaseDot, fillPct, phaseText;
+
+    if (dom <= 10) {
+        phase = 'open';
+        phaseLabel = 'Набор открыт';
+        phaseDot = 'green';
+        fillPct = 20;
+        phaseText = 'Принимаем новых клиентов';
+    } else if (dom <= 22) {
+        phase = 'filling';
+        phaseLabel = 'Набор идёт';
+        phaseDot = 'green';
+        fillPct = 50;
+        phaseText = 'Есть свободные места — не откладывайте';
+    } else {
+        phase = 'closing';
+        phaseLabel = 'Набор завершается';
+        phaseDot = 'orange';
+        fillPct = 80;
+        phaseText = 'Остались последние места на этот месяц';
+    }
+
+    var isClosing = phase === 'closing';
+
+    curEl.className = 'cohort-card' + (isClosing ? ' cohort-card--hot' : '');
+    curEl.innerHTML =
+        '<div class="cohort-label cohort-label--' + (isClosing ? 'hot' : 'open') + '">' + phaseLabel + '</div>' +
+        '<div class="cohort-title">' + MONTHS_NOM[m] + ' ' + y + '</div>' +
+        '<div class="cohort-bar"><div class="cohort-fill cohort-fill--' + (isClosing ? 'hot' : 'open') + '" style="width:' + fillPct + '%"></div></div>' +
+        '<div class="cohort-phase"><span class="cohort-phase-dot cohort-phase-dot--' + phaseDot + '"></span> ' + phaseText + '</div>';
+
+    var nextM = (m + 1) % 12;
+    var nextY = m === 11 ? y + 1 : y;
+
+    nextEl.className = 'cohort-card';
+    nextEl.innerHTML =
+        '<div class="cohort-label cohort-label--open">Предварительная запись</div>' +
+        '<div class="cohort-title">' + MONTHS_NOM[nextM] + ' ' + nextY + '</div>' +
+        '<div class="cohort-bar"><div class="cohort-fill cohort-fill--open" style="width:8%"></div></div>' +
+        '<div class="cohort-phase"><span class="cohort-phase-dot cohort-phase-dot--blue"></span> Запишитесь заранее — гарантия места</div>';
+}
+
+// ══════════════════════════════════════
+// SEASON TIMER — real dates, no fake spots
+// ══════════════════════════════════════
+function getNextPutinaStart() {
+    var now = new Date();
+    var y = now.getFullYear();
+    var dates = [new Date(y, 0, 15), new Date(y, 8, 1), new Date(y + 1, 0, 15)];
+    for (var i = 0; i < dates.length; i++) {
+        if (dates[i] > now) return dates[i];
+    }
+    return dates[dates.length - 1];
+}
+
+function renderSeasonTimer() {
+    var box = document.getElementById('seasonBox');
+    if (!box) return;
+
+    var target = getNextPutinaStart();
+    var now = new Date();
+    var diff = Math.max(0, target.getTime() - now.getTime());
+    var days = Math.floor(diff / 864e5);
+    var hours = Math.floor((diff % 864e5) / 36e5);
+    var mins = Math.floor((diff % 36e5) / 6e4);
+    var dateStr = target.getDate() + ' ' + MONTHS_GEN[target.getMonth()] + ' ' + target.getFullYear();
+
+    var prepAdvice;
+    if (days > 90) {
+        prepAdvice = 'Есть время подготовиться — но лучше начать сейчас';
+    } else if (days > 60) {
+        prepAdvice = 'Осталось достаточно времени, но не откладывайте';
+    } else if (days > 30) {
+        prepAdvice = 'Время на исходе — документы + ценз занимают минимум 2 месяца';
+    } else {
+        prepAdvice = 'К этой путине уже сложно успеть — запишитесь на следующую';
+    }
+
+    box.innerHTML =
+        '<span class="season-icon">\uD83E\uDD80</span>' +
+        '<div class="season-title">Крабовая путина стартует ' + dateStr + '</div>' +
+        '<div class="season-subtitle">Подготовка документов + первый рейс для ценза = начните заранее</div>' +
+        '<div class="season-countdown">' +
+            '<div class="season-unit"><span class="season-num">' + days + '</span><span class="season-lbl">дней</span></div>' +
+            '<div class="season-unit"><span class="season-num">' + hours + '</span><span class="season-lbl">часов</span></div>' +
+            '<div class="season-unit"><span class="season-num">' + mins + '</span><span class="season-lbl">минут</span></div>' +
+        '</div>' +
+        '<div class="season-tip"><strong>' + days + '</strong> дней до старта. ' + prepAdvice + '.</div>';
+}
+
+// ══════════════════════════════════════
+// EXIT INTENT POPUP
+// ══════════════════════════════════════
+function showExitPopup() {
+    if (exitShown) return;
+    var fs = $('#formSuccess');
+    if (fs && fs.classList.contains('show')) return;
+    exitShown = true;
+    if (exitOverlay) {
+        exitOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeExitPopup() {
+    if (exitOverlay) {
+        exitOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+function submitExitForm() {
+    var ph = $('#exitPhone');
+    if (!ph || !ph.value.trim() || ph.value.length < 7) {
+        if (ph) { ph.style.borderColor = 'var(--red)'; ph.focus(); }
+        return;
+    }
+    $('#exitFormWrap').style.display = 'none';
+    $('#exitSuccess').classList.add('show');
+    setTimeout(closeExitPopup, 3000);
+}
+
+// Desktop: mouse leaves window
+if (exitOverlay) {
+    document.addEventListener('mouseout', function(e) {
+        if (!exitShown && e.clientY < 5 && !e.relatedTarget) showExitPopup();
+    });
+    exitOverlay.addEventListener('click', function(e) {
+        if (e.target === exitOverlay) closeExitPopup();
+    });
+}
+
+// ══════════════════════════════════════
+// CONTACT BOTTOM SHEET
+// ══════════════════════════════════════
+function openSheet() {
+    if (!sheet || !sheetOverlay) return;
+    sheet.classList.add('open');
+    sheet.setAttribute('aria-hidden', 'false');
+    sheetOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeSheet() {
+    if (!sheet || !sheetOverlay) return;
+    sheet.classList.remove('open');
+    sheet.setAttribute('aria-hidden', 'true');
+    sheetOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && sheet && sheet.classList.contains('open')) closeSheet();
+});
+
+// Swipe to close
+if (sheet) {
+    var startY = 0, curY = 0, dragging = false;
+
+    sheet.addEventListener('touchstart', function(e) {
+        startY = e.touches[0].clientY;
+        dragging = true;
+    }, { passive: true });
+
+    sheet.addEventListener('touchmove', function(e) {
+        if (!dragging) return;
+        curY = e.touches[0].clientY;
+        var diff = curY - startY;
+        if (diff > 0) {
+            sheet.style.transform = 'translateY(' + diff + 'px)';
+            sheet.style.transition = 'none';
+        }
+    }, { passive: true });
+
+    sheet.addEventListener('touchend', function() {
+        if (!dragging) return;
+        dragging = false;
+        sheet.style.transition = '';
+        sheet.style.transform = '';
+        if (curY - startY > 80) closeSheet();
+        curY = startY = 0;
+    }, { passive: true });
+}
+
+// ══════════════════════════════════════
+// CLIPBOARD & TOAST
+// ══════════════════════════════════════
+function showToast(msg) {
+    var t = $('#sheetToast');
+    if (!t) return;
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(function() { t.classList.remove('show'); }, 2500);
+}
+
+function copyToClipboard(text, msg) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() { showToast(msg); }).catch(function() { fallbackCopy(text, msg); });
+    } else {
+        fallbackCopy(text, msg);
+    }
+}
+
+function fallbackCopy(text, msg) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try { document.execCommand('copy'); showToast(msg); }
+    catch(e) { showToast('Не удалось скопировать'); }
+    document.body.removeChild(ta);
+}
+
+// ══════════════════════════════════════
+// INIT
+// ══════════════════════════════════════
+function init() {
+    initReveal();
+    renderCohorts();
+    renderSeasonTimer();
+    calculateFromChips();
+    setInterval(renderSeasonTimer, 60000);
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
+
+window.addEventListener('load', function() {
+    $$('.reveal').forEach(function(e) {
+        if (!e.classList.contains('visible')) e.classList.add('visible');
+    });
+});
+</script>
+</body>
+</html>
