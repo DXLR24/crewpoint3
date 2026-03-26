@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrewPoint — Карьерные пути, калькулятор и FAQ | Подробный разбор</title>
+    <meta name="description" content="Подробный разбор карьерных путей в море: вахтенный матрос, краболовный флот Камчатки, международные суда. Калькулятор окупаемости, FAQ, честные цены.">
+    <meta name="theme-color" content="#080C14">
+    <meta name="color-scheme" content="dark">
+    <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════
+     HEADER
+     ═══════════════════════════════════ -->
+<header class="header" id="header">
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo-anchor.png" alt="CrewPoint" class="logo-icon" width="54" height="54">
+            <img src="assets/images/logo-text.png" alt="CrewPoint" class="logo-name" height="28">
+        </a>
+        <nav class="nav">
+            <a href="#career-paths">Карьерная карта</a>
+            <a href="#calc">Калькулятор</a>
+            <a href="#faq">Вопросы</a>
+            <a href="index.html#pricing">Стоимость</a>
+            <a href="index.html#form" class="btn btn--gold btn--sm">Оставить заявку</a>
+        </nav>
+        <button class="burger" id="burgerBtn"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">&#x2715;</button>
+    <a href="#career-paths">Карьерная карта</a>
+    <a href="#calc">Калькулятор</a>
+    <a href="#faq">Вопросы</a>
+    <a href="index.html#pricing">Стоимость</a>
+    <a href="index.html#trust">Гарантии</a>
+    <a href="index.html#form" class="btn btn--gold">Оставить заявку</a>
+</div>
+
+<!-- ═══════════════════════════════════
+     MINI HERO
+     ═══════════════════════════════════ -->
+<section class="mini-hero bg-dark text-center">
+    <div class="container">
+        <span class="label">Подробный разбор</span>
+        <h1>Всё о карьере в <span class="accent">море</span></h1>
+        <p>Карьерные пути, калькулятор окупаемости, честные цены, частые вопросы — вся информация для принятия решения</p>
+        <div class="mini-hero-nav">
+            <a href="#transparency">Честная цена</a>
+            <a href="#career-paths">Три пути</a>
+            <a href="#calc">Калькулятор</a>
+            <a href="#faq">FAQ</a>
+            <a href="#form">Оставить заявку</a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     TRANSPARENCY
+     ═══════════════════════════════════ -->
+<section class="section section--sm bg-panel" id="transparency">
+    <div class="container">
+        <div class="reveal text-center transparency-wrap">
+            <span class="label">Честная цена</span>
+            <h2 class="title title--sm">Полная стоимость — сразу. Без скрытых доплат.</h2>
+            <p class="transparency-desc">В нашей нише принято называть клиенту стоимость только за документы. А потом, когда документы готовы и деньги заплачены, озвучивать дополнительную сумму за посадку. Клиент ожидает 55 000 — а платит 120 000.</p>
+            <p class="transparency-desc transparency-desc--bold">Мы так не работаем. На нашем сайте указана полная стоимость от старта до выхода в рейс.</p>
+        </div>
+        <div class="reveal transparency-compare">
+            <div class="transparency-grid">
+                <div class="t-card t-card--bad">
+                    <div class="t-heading text-red">Как у других</div>
+                    <div class="t-rows">
+                        <div class="t-row t-row--line t-row--line-bad"><span class="t-text">Вам говорят</span><span class="t-value">55 000 ₽</span></div>
+                        <div class="t-row t-row--line t-row--line-bad"><span class="t-text text-red">Узнаёте потом</span><span class="t-value text-red">+ 65 000 ₽</span></div>
+                        <div class="t-row"><span class="t-total">Реально платите</span><span class="t-total-mono text-red">120 000 ₽</span></div>
+                    </div>
+                </div>
+                <div class="t-card t-card--good">
+                    <div class="t-heading text-green">Как у CrewPoint</div>
+                    <div class="t-rows">
+                        <div class="t-row t-row--line t-row--line-good"><span class="t-text">Вам говорят сразу</span><span class="t-value">120 000 ₽</span></div>
+                        <div class="t-row t-row--line t-row--line-good"><span class="t-text text-green">Скрытые доплаты</span><span class="t-value text-green">0 ₽</span></div>
+                        <div class="t-row"><span class="t-total">Реально платите</span><span class="t-total-mono text-green">120 000 ₽</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="transparency-advice reveal">
+                <p>Совет: если сравниваете нас с другими — спросите у них прямо: <strong>«Какова полная стоимость от оформления до выхода в рейс, включая посадку?»</strong> Ответ может вас удивить.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     НАБОР И СЕЗОННОСТЬ
+     ═══════════════════════════════════ -->
+<section class="section section--sm bg-dark">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Набор</span>
+            <h2 class="title title--sm">Статус набора и сезонность</h2>
+            <p class="subtitle">Набираем клиентов ежемесячно. Краболовный флот — сезонный, важно не упустить окно.</p>
+        </div>
+        <div class="cohort-banner reveal">
+            <div class="cohort-card" id="cohortCurrent"></div>
+            <div class="cohort-card" id="cohortNext"></div>
+        </div>
+        <div class="season-box reveal" id="seasonBox"></div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     CAREER PATHS — DETAILED
+     ═══════════════════════════════════ -->
+<section class="section bg-navy" id="career-paths">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Карьерная карта</span>
+            <h2 class="title">Один старт — <span class="accent">три пути роста</span></h2>
+            <p class="subtitle">Все начинают одинаково. А дальше — выбираете свой путь</p>
+        </div>
+        <div class="career-map reveal">
+            <div class="career-start">
+                <span class="branch-badge badge-blue">Этап 1 — Старт</span>
+                <h3>Матрос / первый рейс</h3>
+                <p>Документы (включая УЛМ и мореходную книжку) + первый контракт. Рыболовный флот, Владивосток. Набираете 1–2 месяца ценза.</p>
+                <div class="stage-stats">
+                    <div class="s-stat"><span class="s-val text-green">150 000 ₽</span><span class="s-lbl">Зарплата / мес</span></div>
+                    <div class="s-stat"><span class="s-val text-blue">~1 мес</span><span class="s-lbl">Все документы</span></div>
+                    <div class="s-stat"><span class="s-val text-gold">Владивосток</span><span class="s-lbl">Первый порт</span></div>
+                </div>
+            </div>
+            <div class="career-arrow-center"><span>&#8595;</span>После 1–2 месяцев ценза — выбираете свой путь</div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     PATH COMFORT
+     ═══════════════════════════════════ -->
+<section class="section bg-dark" id="path-comfort">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Карьерный рост</span>
+            <h2 class="title">Вахтенный матрос — меньше нагрузки, больше возможностей</h2>
+            <p class="subtitle">После 1–2 месяцев ценза мы поможем вам перейти на совершенно другой уровень работы в море</p>
+        </div>
+        <div class="path-box path-box--blue reveal">
+            <div class="path-inner">
+                <div class="path-content">
+                    <h3>Почему вахтенный матрос — это переломный момент</h3>
+                    <p class="p-desc">Первый рейс — это рыболовные суда и Владивосток. Тяжёлый физический труд, дорогие перелёты, непростые условия. Вахтенный матрос — это совершенно другой уровень: работа на мостике вместо палубы, современные суда, и главное — порты посадки рядом с домом. Та же или выше зарплата, но жизнь кардинально меняется.</p>
+                    <ul class="path-benefits">
+                        <li><span class="bdot bdot-green"></span><div><strong>В разы меньше физической работы.</strong> Вы на мостике, а не с кисточкой на палубе. Наблюдение, навигация, связь — интеллектуальный труд.</div></li>
+                        <li><span class="bdot bdot-gold"></span><div><strong>Зарплата 150 000–200 000 ₽ и выше.</strong> На танкерах и перегрузчиках ставки выше, чем на сухогрузах. Плюс надбавки за условия работы.</div></li>
+                        <li><span class="bdot bdot-blue"></span><div><strong>Порты посадки рядом с домом.</strong> Новороссийск, Санкт-Петербург, Мурманск, Калининград — не нужно лететь во Владивосток за 40 000 ₽.</div></li>
+                        <li><span class="bdot bdot-purple"></span><div><strong>Лучшие суда.</strong> Перегрузчики и танкеры — это современные суда с хорошими условиями: каюты, питание, отдых.</div></li>
+                        <li><span class="bdot bdot-green"></span><div><strong>Экономия до 100 000 ₽ в год на билетах.</strong> Перелёт Москва → Владивосток: 30 000–50 000 ₽. Поезд до Новороссийска: 3 000–5 000 ₽. За 2 контракта экономия = целая зарплата.</div></li>
+                        <li><span class="bdot bdot-gold"></span><div><strong>Следующая ступень — боцман.</strong> Вахтенный матрос → старший матрос → боцман. Зарплата боцмана: 200 000–350 000 ₽. Мы поможем и с этим.</div></li>
+                    </ul>
+                </div>
+                <div class="path-sidebar">
+                    <div class="price-box"><p class="price-label">Стоимость повышения квалификации</p><div class="price-value">120 000 <span>₽</span></div><p class="price-note">документы + организация собеседований + сопровождение</p></div>
+                    <div class="roi-box"><p>Окупаемость: <strong>меньше 1 месяца работы в море</strong></p><p>Экономия на билетах за год: <strong>60 000–100 000 ₽</strong></p><p>Больше не нужно летать во Владивосток</p></div>
+                    <div class="inst-box"><p>Рассрочка: <strong>3 платежа по 40 000 ₽</strong></p><p>Первый платёж — при заключении договора</p></div>
+                    <a href="#form" class="btn btn--primary btn--full">Узнать подробнее &rarr;</a>
+                    <p class="geo-title">Порты после повышения</p>
+                    <div class="geo-grid">
+                        <div class="geo-card"><div class="geo-card-img photo-frame"><img src="assets/images/port-novorossiysk.webp" alt="Новороссийск" class="photo" loading="lazy" width="300" height="100" decoding="async"></div><h4>Новороссийск</h4><p>Чёрное море</p><span class="geo-tag">Близко</span></div>
+                        <div class="geo-card"><div class="geo-card-img photo-frame"><img src="assets/images/port-spb.webp" alt="Санкт-Петербург" class="photo" loading="lazy" width="300" height="100" decoding="async"></div><h4>Санкт-Петербург</h4><p>Балтика</p><span class="geo-tag">Близко</span></div>
+                        <div class="geo-card"><div class="geo-card-img photo-frame"><img src="assets/images/port-murmansk.webp" alt="Мурманск" class="photo" loading="lazy" width="300" height="100" decoding="async"></div><h4>Мурманск</h4><p>Баренцево море</p><span class="geo-tag">Близко</span></div>
+                        <div class="geo-card"><div class="geo-card-img photo-frame"><img src="assets/images/port-kaliningrad.webp" alt="Калининград" class="photo" loading="lazy" width="300" height="100" decoding="async"></div><h4>Калининград</h4><p>Балтика / Европа</p><span class="geo-tag">Близко</span></div>
+                    </div>
+                    <div class="geo-saving"><h4>Первый рейс — Владивосток. После повышения — рядом с домом</h4><p>Все начинают с Дальнего Востока. Но после 1–2 месяцев ценза и повышения до вахтенного — вы пересаживаетесь на ближние порты. Экономия 30 000–50 000 ₽ на каждом перелёте. За год — целая зарплата.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     PATH CAPITAL
+     ═══════════════════════════════════ -->
+<section class="section bg-navy" id="path-capital">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Максимальный заработок</span>
+            <h2 class="title">Краболовный флот Камчатки — <span class="accent">до 500 000 ₽ в месяц</span></h2>
+            <p class="subtitle">Самые высокооплачиваемые позиции в российском флоте. Короткие путины, серьёзные деньги.</p>
+        </div>
+        <div class="path-box path-box--orange reveal">
+            <div class="path-inner">
+                <div class="path-content">
+                    <h3>Краболовный флот — для тех, кто хочет максимум</h3>
+                    <p class="p-desc">Камчатка — это не для всех. Суровые условия, тяжёлая работа, холод. Но за 2–3 месяца путины вы зарабатываете столько, сколько обычный моряк за полгода. А между путинами — свободны. Это выбор для амбициозных людей, которые готовы пахать ради результата.</p>
+                    <ul class="path-benefits">
+                        <li><span class="bdot bdot-orange"></span><div><strong>Зарплата 300 000 – 500 000 ₽ в месяц.</strong> Самые высокие ставки в российском флоте. За одну путину — от 600 000 до 1 500 000 ₽.</div></li>
+                        <li><span class="bdot bdot-gold"></span><div><strong>Короткий контракт: 2–3 месяца.</strong> Путина — это сезон. Отработали — свободны. Можно совмещать с другой работой или отдыхать.</div></li>
+                        <li><span class="bdot bdot-orange"></span><div><strong>Петропавловск-Камчатский.</strong> Порт посадки — Камчатка. Добыча краба в Охотском и Беринговом морях.</div></li>
+                        <li><span class="bdot bdot-gold"></span><div><strong>Премиум-сегмент.</strong> Ограниченное количество мест, высокие требования. Не берут первоходов — нужен минимум 1 рейс (1–2 месяца ценза). Мы проведём вас через первый рейс.</div></li>
+                        <li><span class="bdot bdot-orange"></span><div><strong>Путь к максимальному доходу.</strong> Опытные крабловщики зарабатывают от 500 000 ₽ в месяц. Некоторые — значительно больше в зависимости от улова.</div></li>
+                    </ul>
+                </div>
+                <div class="path-sidebar">
+                    <div class="price-box"><p class="price-label">Стоимость сопровождения</p><div class="price-value">150 000 <span>₽</span></div><p class="price-note">документы + собеседования с крабодобывающими компаниями + сопровождение</p></div>
+                    <div class="roi-box"><p>Заработок за путину (2–3 мес): <strong>600 000 – 1 500 000 ₽</strong></p><p>Окупаемость: <strong>меньше 1 месяца в море</strong></p></div>
+                    <div class="inst-box"><p>Рассрочка: <strong>3 платежа по 50 000 ₽</strong></p><p>Первый платёж — при заключении договора</p></div>
+                    <a href="#form" class="btn btn--orange btn--full">Узнать подробнее &rarr;</a>
+                    <div class="geo-card geo-card--standalone"><div class="geo-card-img geo-card-img--tall photo-frame"><img src="assets/images/kamchatka-port.webp" alt="Петропавловск-Камчатский" class="photo" loading="lazy" width="300" height="160" decoding="async"></div><h4>Петропавловск-Камчатский</h4><p>Охотское и Берингово моря</p><span class="geo-tag geo-tag--orange">Краболовный флот</span></div>
+                    <div class="geo-saving geo-saving--orange"><h4>Важно: нужен ценз</h4><p>Крабодобывающие компании не берут людей без морского стажа. Вам нужен минимум один рейс (1–2 месяца). Мы проведём вас через первый рейс на рыболовном судне, а после организуем собеседования на краболовный флот.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     PATH GLOBAL
+     ═══════════════════════════════════ -->
+<section class="section bg-dark" id="path-global">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Международная карьера</span>
+            <h2 class="title">Международный флот — зарплата в валюте</h2>
+            <p class="subtitle">После повышения до вахтенного матроса открывается возможность работы на судах под иностранным флагом</p>
+        </div>
+        <div class="path-box path-box--cyan reveal">
+            <div class="path-inner">
+                <div class="path-content">
+                    <h3>Работа под иностранным флагом — совершенно другой уровень</h3>
+                    <p class="p-desc">Зарплата выплачивается в долларах или евро — от $2 000 до $5 000 в месяц в зависимости от флага, типа судна и должности. Посадка в портах разных стран. Это кратно выше российского уровня дохода. Для работы под флагом требуется квалификация вахтенного матроса и международные сертификаты. Мы помогаем с получением всех необходимых документов и организуем собеседования с международными судовладельцами.</p>
+                    <ul class="path-benefits">
+                        <li><span class="bdot bdot-cyan"></span><div><strong>Зарплата от $2 000 до $5 000 в месяц.</strong> В пересчёте — 180 000–500 000 ₽, при этом доход в валюте не зависит от курсовых скачков внутри России.</div></li>
+                        <li><span class="bdot bdot-cyan"></span><div><strong>Посадка в портах Европы и Азии.</strong> Турция, Греция, ОАЭ, Сингапур и другие — зависит от маршрута и компании.</div></li>
+                        <li><span class="bdot bdot-cyan"></span><div><strong>Современные суда международного класса.</strong> Высокие стандарты безопасности, комфорта и оплаты.</div></li>
+                        <li><span class="bdot bdot-cyan"></span><div><strong>Карьерный рост на международном уровне.</strong> Опыт на иностранных судах открывает двери к высшим позициям в мировом флоте.</div></li>
+                    </ul>
+                    <p class="geo-title geo-title--cyan">Направления и флаги</p>
+                    <div class="flag-grid">
+                        <div class="flag-card"><span class="flag-emoji">&#127475;&#127476;</span><h4>Норвегия</h4><p>Оффшор, нефтяные платформы. Одни из самых высоких зарплат в мире.</p></div>
+                        <div class="flag-card"><span class="flag-emoji">&#127477;&#127462;</span><h4>Панама</h4><p>Крупнейший судовой реестр мира. Танкеры, балкеры, контейнеровозы.</p></div>
+                        <div class="flag-card"><span class="flag-emoji">&#127474;&#127469;</span><h4>Маршалловы Острова</h4><p>Мировые контейнерные линии. Maersk, MSC, CMA CGM.</p></div>
+                        <div class="flag-card"><span class="flag-emoji">&#127464;&#127486;</span><h4>Кипр</h4><p>Крупнейший реестр Европы. Средиземноморские маршруты.</p></div>
+                    </div>
+                </div>
+                <div class="path-sidebar">
+                    <div class="price-box"><p class="price-label">Стоимость</p><div class="price-value price-value--sm">Индивидуально</div><p class="price-note">Зависит от флага, направления и вашего опыта</p></div>
+                    <div class="roi-box roi-box--cyan"><p>Зарплата: <strong>от $2 000 до $5 000/мес</strong></p><p>В пересчёте: <strong>180 000–500 000 ₽/мес</strong></p></div>
+                    <div class="inst-box inst-box--cyan"><p>Требование: <strong>квалификация вахтенного матроса</strong></p><p>Сначала — повышение, затем — международный флот</p></div>
+                    <a href="#form" class="btn btn--cyan btn--full">Узнать подробности &rarr;</a>
+                    <div class="geo-saving geo-saving--cyan geo-saving--top"><h4>Это индивидуальный путь</h4><p>Международный флот — это не типовой пакет. Условия зависят от вашего опыта, квалификации и пожеланий. На персональной консультации подберём оптимальный вариант и рассчитаем стоимость.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     CALCULATOR
+     ═══════════════════════════════════ -->
+<section class="section bg-navy" id="calc">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Калькулятор</span>
+            <h2 class="title">Посчитайте окупаемость</h2>
+            <p class="subtitle">Карьера в море — инвестиция с возвратом от 300%</p>
+        </div>
+        <div class="calc-box reveal">
+            <div class="calc-outer">
+                <div>
+                    <div class="calc-grid">
+                        <div>
+                            <div class="calc-group">
+                                <label>Выбранный путь</label>
+                                <div class="chip-group" id="chipPackage">
+                                    <button class="chip" data-value="55000">Документы<span class="chip-sub">55 000 ₽</span></button>
+                                    <button class="chip" data-value="120000">Старт карьеры<span class="chip-sub">120 000 ₽</span></button>
+                                    <button class="chip active" data-value="240000">Карьера PRO<span class="chip-sub">240 000 ₽</span></button>
+                                    <button class="chip" data-value="270000">Старт + краболов<span class="chip-sub">270 000 ₽</span></button>
+                                </div>
+                            </div>
+                            <div class="calc-group">
+                                <label>Зарплата в море</label>
+                                <div class="chip-group" id="chipSalary">
+                                    <button class="chip" data-value="100000">100K<span class="chip-sub">начало</span></button>
+                                    <button class="chip active" data-value="150000">150K<span class="chip-sub">среднее</span></button>
+                                    <button class="chip" data-value="200000">200K<span class="chip-sub">вахт. матрос</span></button>
+                                    <button class="chip" data-value="300000">300K<span class="chip-sub">краболов</span></button>
+                                    <button class="chip" data-value="500000">500K<span class="chip-sub">краб. макс</span></button>
+                                </div>
+                            </div>
+                            <div class="calc-group">
+                                <label>Контракт</label>
+                                <div class="chip-group" id="chipMonths">
+                                    <button class="chip" data-value="3">3 мес<span class="chip-sub">путина</span></button>
+                                    <button class="chip" data-value="4">4 мес</button>
+                                    <button class="chip active" data-value="6">6 мес</button>
+                                    <button class="chip" data-value="9">9 мес</button>
+                                </div>
+                            </div>
+                            <div class="calc-group" id="flightsGroup">
+                                <label>Экономия на перелётах</label>
+                                <div class="chip-group" id="chipFlights">
+                                    <button class="chip active" data-value="0">0 ₽<span class="chip-sub">Владивосток</span></button>
+                                    <button class="chip" data-value="30000">30K<span class="chip-sub">1 рейс/год</span></button>
+                                    <button class="chip" data-value="60000">60K<span class="chip-sub">2 рейса/год</span></button>
+                                    <button class="chip" data-value="100000">100K<span class="chip-sub">3 рейса/год</span></button>
+                                </div>
+                                <div class="flight-warning" id="flightWarning"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="calc-result">
+                                <div class="calc-item"><div class="calc-label">Ваши вложения</div><div class="calc-val" id="calcInvestment">240 000 ₽</div></div>
+                                <div class="calc-item"><div class="calc-label">Заработок за контракт</div><div class="calc-val calc-val--green" id="calcEarnings">900 000 ₽</div></div>
+                                <div class="calc-item" id="calcSavingsRow"><div class="calc-label">Экономия на перелётах</div><div class="calc-val calc-val--gold" id="calcSavings">0 ₽</div></div>
+                                <div class="calc-item calc-item--loss" id="calcLossRow" style="display:none"><div class="calc-label">Расходы на перелёты (в год)</div><div class="calc-val calc-val--red" id="calcLoss">-80 000 ₽</div></div>
+                                <div class="calc-item"><div class="calc-label">Чистая выгода</div><div class="calc-val calc-val--green" id="calcProfit">660 000 ₽</div></div>
+                            </div>
+                            <div id="calcNoResult" class="calc-no-result" style="display:none">
+                                <div class="calc-no-icon">&#9888;</div>
+                                <h4>Расчёт недоступен</h4>
+                                <p>Пакет «Документы» не включает подбор контракта и карьерное сопровождение. Вы получите документы, но искать работу придётся самостоятельно. Рассчитать окупаемость невозможно — результат зависит только от вас.</p>
+                                <p class="calc-no-cta" id="selectProCta">Выбрать «Старт карьеры» для гарантированного результата &rarr;</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="roi-gauge-sticky">
+                    <div class="roi-gauge">
+                        <div class="roi-gauge-value" id="roiGaugeValue">275%</div>
+                        <div class="roi-gauge-label">ROI</div>
+                        <div class="roi-gauge-track">
+                            <div class="roi-gauge-fill" id="roiGaugeFill" style="height:27.5%"></div>
+                            <div class="roi-gauge-marker" id="roiGaugeMarker" style="bottom:27.5%"><span class="roi-gauge-marker-value" id="roiMarkerText">275%</span></div>
+                            <div class="roi-gauge-tick" id="roiGaugeTick" style="bottom:27.5%"></div>
+                            <div class="roi-gauge-marks">
+                                <div class="roi-gauge-mark"><span class="roi-gauge-mark-label">1000%</span></div>
+                                <div class="roi-gauge-mark"><span class="roi-gauge-mark-label">700%</span></div>
+                                <div class="roi-gauge-mark"><span class="roi-gauge-mark-label">500%</span></div>
+                                <div class="roi-gauge-mark"><span class="roi-gauge-mark-label">300%</span></div>
+                                <div class="roi-gauge-mark"><span class="roi-gauge-mark-label">100%</span></div>
+                                <div class="roi-gauge-mark"><span class="roi-gauge-mark-label">0%</span></div>
+                            </div>
+                        </div>
+                        <div class="roi-gauge-caption">Возврат инвестиций</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     FAQ
+     ═══════════════════════════════════ -->
+<section class="section bg-dark" id="faq">
+    <div class="container">
+        <div class="reveal text-center">
+            <span class="label">Вопросы</span>
+            <h2 class="title">Частые вопросы</h2>
+        </div>
+        <div class="faq-list reveal" id="faqList">
+            <div class="faq-item active"><button class="faq-q">Это легально? Документы настоящие?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Да, полностью легально. Мы не продаём документы — мы выступаем как ваше личное агентство: организуем экспресс-обучение в аккредитованных учебных центрах, помогаем пройти все инстанции без очередей и правильно заполняем заявления, экономя вам до 5 месяцев жизни. Вы лично проходите медкомиссию и дактилоскопию — это обязательные процедуры. После основного пакета документов мы также организуем получение УЛМ и мореходной книжки (ещё ~2 недели). Каждый сертификат регистрируется в государственных реестрах, и вы можете проверить подлинность самостоятельно.</div></div></div>
+            <div class="faq-item"><button class="faq-q">Почему через вас дешевле, чем напрямую в учебных центрах?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Мы направляем в учебные центры большой поток клиентов ежемесячно и работаем на партнёрских условиях. Центр, принимая одного человека «с улицы», выставляет полную розничную стоимость. Мы обеспечиваем им стабильный поток — отсюда оптовые условия, которые транслируем вам.</div></div></div>
+            <div class="faq-item"><button class="faq-q">Вы даёте 100% гарантию, что я уйду в рейс?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">По закону окончательное решение о найме принимает судовладелец. Наша гарантия в другом: мы не бросаем вас после получения документов. Мы организуем собеседования с проверенными компаниями-партнёрами и предлагаем вакансии до тех пор, пока вы не подпишете контракт. Мы работаем на ваш результат — именно поэтому 78% наших клиентов выбирают пакет с карьерным сопровождением.</div></div></div>
+            <div class="faq-item"><button class="faq-q">Какой карьерный путь выбрать?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Зависит от ваших приоритетов. Если важен комфорт, близость к дому и стабильность — выбирайте повышение до вахтенного матроса: ближние порты, лёгкая работа, 150–200K в месяц. Если хотите максимальный заработок и готовы к тяжёлой работе — краболовный флот Камчатки: 300 000+ ₽ в месяц, но суровые условия и короткие путины. Если мечтаете о международной карьере с зарплатой в валюте — путь через вахтенного матроса на суда под иностранным флагом. Многие наши клиенты комбинируют: сначала вахтенный для стабильности, потом краболов на сезон для заработка. На консультации подберём оптимальный план.</div></div></div>
+            <div class="faq-item"><button class="faq-q">Можно ли сразу пойти на краболовы?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">К сожалению, нет. Крабодобывающие компании не берут людей без морского стажа — это требование безопасности. Вам нужен минимум один рейс (1–2 месяца ценза). Мы проведём вас через первый рейс на рыболовном судне, а после набора ценза организуем собеседования с крабодобывающими компаниями Камчатки. Многие наши клиенты проходят этот путь за 3–4 месяца от нуля до краболова.</div></div></div>
+            <div class="faq-item"><button class="faq-q">Что значит «работа под флагом»?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Это работа на судах, зарегистрированных под флагом иностранного государства — Норвегии, Панамы, Маршалловых Островов, Кипра и других. Зарплата выплачивается в валюте (доллары или евро) и составляет от $2 000 до $5 000 в месяц в зависимости от флага, типа судна и должности. Посадка — в портах разных стран. Для работы под флагом требуется квалификация вахтенного матроса и международные сертификаты. Мы помогаем с получением всех необходимых документов и организуем собеседования с международными судовладельцами.</div></div></div>
+            <div class="faq-item"><button class="faq-q">Первый рейс — обязательно Владивосток? А когда ближние порты?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Да, большинство начинают с рыболовных судов на Дальнем Востоке — это стандартный вход в профессию. Но уже после 1–2 месяцев ценза вы можете пройти повышение до вахтенного матроса, и тогда открываются вакансии на перегрузчиках и танкерах с посадкой в Новороссийске, Санкт-Петербурге, Мурманске и Калининграде. Перелёт Москва → Владивосток стоит 30 000–50 000 ₽. Поезд до Новороссийска — 3 000 ₽. За 2 года экономия на одних билетах может составить стоимость автомобиля. Именно поэтому повышение квалификации — лучшая инвестиция после первого рейса.</div></div></div>
+            <div class="faq-item"><button class="faq-q">Нужно ли платить всё сразу?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Нет. Мы работаем с поэтапной оплатой. Для пакета «Карьера PRO»: первый платёж при заключении договора, второй — при получении документов, третий — при организации собеседований на новом уровне. Вы платите по мере получения конкретного результата на каждом этапе.</div></div></div>
+            <div class="faq-item"><button class="faq-q">А если документы не примут? Есть гарантия?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">В договоре прописана ответственность за качество наших консалтинговых услуг. Если по нашей вине документы окажутся непригодными — возвращаем 100% оплаты. За 500+ моряков, прошедших через нас, таких случаев не было ни разу — все сертификаты получены через аккредитованные учебные центры и зарегистрированы в госреестрах.</div></div></div>
+            <div class="faq-item"><button class="faq-q">Что именно я должен сделать лично?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Мы берём на себя максимум бюрократии: запись в учебные центры, бронирование времени, подготовку заявлений, координацию между инстанциями. Но есть процедуры, которые по закону требуют личного присутствия: прохождение медицинской комиссии и сдача биометрических данных (дактилоскопия). Мы организуем запись и подскажем, что нужно — вам останется только прийти в назначенное время.</div></div></div>
+            <div class="faq-item"><button class="faq-q">Почему вы показываете полную стоимость, а другие — нет?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">В нашей нише распространена практика озвучивать только стоимость документов (55 000 ₽), а стоимость посадки (60 000–70 000 ₽) сообщать уже после оплаты первого этапа. Клиент думает что платит 55 000, а по факту платит 120 000. Формально это не обман — но и полной картины вам заранее не дают. Мы принципиально работаем иначе: на сайте, в договоре и на консультации вы сразу видите полную стоимость каждого пакета. Если сравниваете нас с другими компаниями — задайте им один вопрос: «Какова полная стоимость от оформления до выхода в рейс, включая посадку?» Ответ может отличаться от того что вам назвали изначально.</div></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     REFERRAL
+     ═══════════════════════════════════ -->
+<section class="referral" id="referral">
+    <div class="referral__container">
+        <div class="referral__badge">БОНУСНАЯ ПРОГРАММА</div>
+        <h2 class="referral__title">Приведи друга — получи <span class="referral__accent">10 000 ₽</span></h2>
+        <p class="referral__subtitle">Друг заключает договор и называет ваше имя — вы получаете 10 000 ₽ на карту. Без ограничений по количеству.</p>
+
+        <button class="referral__main-toggle" id="referralMainToggle">
+            <span>Подробнее</span>
+            <svg class="referral__main-toggle-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+
+        <div class="referral__hidden-content" id="referralHiddenContent">
+            <div class="referral__hidden-inner">
+                <div class="referral__cards">
+                    <div class="referral__card"><div class="referral__card-number">1</div><div class="referral__card-icon">📲</div><div class="referral__card-text">Расскажите другу о CrewPoint — лично, в чате, как угодно</div></div>
+                    <div class="referral__card"><div class="referral__card-number">2</div><div class="referral__card-icon">📝</div><div class="referral__card-text">Друг обращается и называет ваше имя при заключении договора</div></div>
+                    <div class="referral__card"><div class="referral__card-number">3</div><div class="referral__card-icon">💳</div><div class="referral__card-text">Вы получаете 10 000 ₽ на карту в течение 3 дней</div></div>
+                </div>
+
+                <div class="referral__examples">
+                    <div class="referral__example">1 друг = <strong>10 000 ₽</strong></div>
+                    <div class="referral__example-divider"></div>
+                    <div class="referral__example">3 друга = <strong>30 000 ₽</strong></div>
+                    <div class="referral__example-divider"></div>
+                    <div class="referral__example">5 друзей = <strong>50 000 ₽</strong></div>
+                </div>
+
+                <div class="referral__actions">
+                    <div class="referral__brochure">
+                        <img src="assets/images/crewpoint-brochure.png" alt="Буклет CrewPoint" class="referral__brochure-img" id="referralBrochureImg" loading="lazy" decoding="async">
+                        <span class="referral__brochure-label">Буклет для друга</span>
+                    </div>
+                    <div class="referral__buttons">
+                        <button class="referral__share-btn" id="referralShareBtn">
+                            <svg class="referral__share-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                            Поделиться буклетом
+                        </button>
+                        <a href="assets/images/crewpoint-brochure.png" download="CrewPoint-буклет.png" class="referral__download-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Скачать буклет
+                        </a>
+                    </div>
+                </div>
+
+                <button class="referral__conditions-toggle" id="referralConditionsToggle">
+                    <span>Условия программы</span>
+                    <svg class="referral__conditions-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="referral__conditions" id="referralConditions">
+                    <div class="referral__conditions-inner">
+                        <ul class="referral__conditions-list">
+                            <li>Рекомендовать может кто угодно - не обязательно быть нашим клиентом</li>
+                            <li>Друг должен быть новым клиентом</li>
+                            <li>Бонус начисляется после подписания договора другом</li>
+                            <li>Выплата в течение 3 рабочих дней на карту</li>
+                            <li>Количество рекомендаций не ограничено</li>
+                            <li>Программа действует бессрочно</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     CTA / FORM
+     ═══════════════════════════════════ -->
+<section class="section cta bg-navy" id="form">
+    <div class="cta-video-bg">
+        <video autoplay loop muted playsinline preload="none">
+            <source src="assets/video/sunset-ship.webm" type="video/webm">
+            <source src="assets/video/sunset-ship.webm.mp4" type="video/mp4">
+        </video>
+        <div class="cta-video-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="reveal reveal-d2 text-center">
+            <span class="label">Начните сейчас</span>
+            <h2 class="title">Оставьте заявку — перезвоним за 15 минут</h2>
+            <p class="cta-subtitle">Бесплатная консультация. Расскажем про процесс, ответим на вопросы, посчитаем стоимость. Без давления.</p>
+        </div>
+        <div class="cta-form reveal reveal-d5" id="ctaForm">
+            <div class="form-group"><input type="text" id="formName" placeholder="Ваше имя" required></div>
+            <div class="form-group"><input type="tel" id="formPhone" placeholder="Телефон" required></div>
+            <div class="form-group">
+                <select id="formPackage">
+                    <option value="" disabled selected>Какой пакет интересует?</option>
+                    <option value="docs">Сопровождение (Документы) — 55 000 ₽</option>
+                    <option value="start">Старт карьеры — 120 000 ₽</option>
+                    <option value="pro">Карьера PRO — 240 000 ₽</option>
+                    <option value="upgrade">Повышение до вахтенного матроса — 120 000 ₽</option>
+                    <option value="crab">Краболовный флот — Камчатка — 150 000 ₽</option>
+                    <option value="global">Международный флот (под флагом)</option>
+                    <option value="unsure">Пока не определился</option>
+                </select>
+            </div>
+            <div class="form-group"><input type="text" id="formCity" placeholder="Ваш город"></div>
+            <button type="button" class="btn btn--gold btn--lg form-submit" id="formSubmitBtn">Получить консультацию &rarr;</button>
+            <p class="form-note">Ваши данные защищены. Перезвоним в течение 15 минут в рабочее время.</p>
+        </div>
+        <div class="form-success" id="formSuccess"><div class="s-icon">&#10003;</div><h3>Заявка отправлена!</h3><p>Мы перезвоним вам в течение 15 минут.</p></div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo-anchor.png" alt="CrewPoint" class="logo-icon" width="52" height="52">
+                    <img src="assets/images/logo-text.png" alt="CrewPoint" class="logo-name" height="28">
+                </a>
+                <p>Кадровая платформа для морских специалистов. Документы, контракты, карьерный рост. Три пути развития: вахтенный матрос, краболовный флот, международные суда. 500+ моряков прошли через нас.</p>
+            </div>
+            <div><h4>Главная</h4><ul><li><a href="index.html#how">Как это работает</a></li><li><a href="index.html#pricing">Стоимость</a></li><li><a href="index.html#trust">Гарантии</a></li><li><a href="index.html#reviews">Отзывы</a></li></ul></div>
+            <div><h4>Карьерные пути</h4><ul><li><a href="#path-comfort">Вахтенный матрос</a></li><li><a href="#path-capital">Краболовный флот</a></li><li><a href="#path-global">Международный флот</a></li><li><a href="#calc">Калькулятор</a></li></ul></div>
+            <div><h4>Контакты</h4><ul><li><a href="tel:+79952337540">+7 (995) 233-75-40</a></li><li><a href="mailto:crewpoint_job@mail.ru">crewpoint_job@mail.ru</a></li><li><a href="#">Telegram</a></li><li><a href="#">WhatsApp</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><div>&copy; 2024–2025 CrewPoint. ИП Иванов И.И. ИНН: 000000000000. Консалтинговые услуги.</div><div class="footer-legal"><a href="#">Политика конфиденциальности</a><a href="#">Договор оферты</a></div></div>
+    </div>
+</footer>
+
+<!-- ═══════════════════════════════════
+     FLOATING ELEMENTS
+     ═══════════════════════════════════ -->
+<div class="float-cta" id="floatingCta"><a href="#form" class="btn btn--gold btn--sm">Оставить заявку</a></div>
+
+<div class="contact-trigger" id="contactTrigger">
+    <button class="contact-trigger-btn" id="openSheetBtn">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Связаться
+        <span class="contact-trigger-dot"></span>
+    </button>
+</div>
+
+<!-- ═══════════════════════════════════
+     CONTACT BOTTOM SHEET
+     ═══════════════════════════════════ -->
+<div class="sheet-overlay" id="sheetOverlay"></div>
+<div class="sheet" id="sheet" role="dialog" aria-hidden="true">
+    <div class="sheet-inner">
+        <div class="sheet-handle" id="sheetHandle"><div class="sheet-handle-bar"></div></div>
+        <div class="sheet-status"><span class="sheet-status-text"><span class="sheet-status-dot"></span>Доступны сейчас</span></div>
+        <div class="sheet-messengers">
+            <a href="https://wa.me/79952337540?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BA%D0%B0%D1%80%D1%8C%D0%B5%D1%80%D0%B0%20%D0%B2%20%D0%BC%D0%BE%D1%80%D0%B5." target="_blank" class="sheet-msg-card">
+                <div class="sheet-msg-icon sheet-msg-icon--wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+                <div><div class="sheet-msg-name">WhatsApp</div><div class="sheet-msg-sub">Ответим за 5 минут</div></div>
+            </a>
+            <a href="https://t.me/crewpoint" target="_blank" class="sheet-msg-card">
+                <div class="sheet-msg-icon sheet-msg-icon--tg"><svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></div>
+                <div><div class="sheet-msg-name">Telegram</div><div class="sheet-msg-sub">Удобно и быстро</div></div>
+            </a>
+            <a href="https://max.ru/u/f9LHodD0cOJeIKX2m40lFniNncHoe2YnM5X0vp9SjCywQC83svNUXjvTlmYt" target="_blank" class="sheet-msg-card">
+                <div class="sheet-msg-icon sheet-msg-icon--max"><img src="https://maxicons.ru/icons/Max_logo.svg" alt="Max" width="22" height="22"></div>
+                <div><div class="sheet-msg-name">Max</div><div class="sheet-msg-sub">Российский мессенджер</div></div>
+            </a>
+        </div>
+        <div class="sheet-util">
+            <button class="sheet-util-btn sheet-util-phone" data-copy="+79952337540" data-toast="Телефон скопирован" title="Скопировать телефон">
+                <div class="sheet-util-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+            </button>
+            <button class="sheet-util-btn sheet-util-email" data-copy="crewpoint_job@mail.ru" data-toast="Почта скопирована">
+                <div class="sheet-util-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg></div>
+                <div class="sheet-util-text"><div class="sheet-util-label">Почта агентства</div><div class="sheet-util-value">crewpoint_job@mail.ru</div></div>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="sheet-toast" id="sheetToast"></div>
+
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>
